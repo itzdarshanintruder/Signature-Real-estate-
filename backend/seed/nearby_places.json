@@ -1,0 +1,37 @@
+[
+  { "id": "60000000-0000-4000-8000-000000000001", "project_id": "10000000-0000-4000-8000-000000000001", "name": "Sulur Bus Stop", "category": "Transit", "distance": "2 min", "display_order": 0, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000002", "project_id": "10000000-0000-4000-8000-000000000001", "name": "Vidya Vikas Matric Hr Sec School", "category": "School", "distance": "3 min", "display_order": 1, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000003", "project_id": "10000000-0000-4000-8000-000000000001", "name": "Suguna Vidyalaya Matric Hr Sec School", "category": "School", "distance": "4 min", "display_order": 2, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000004", "project_id": "10000000-0000-4000-8000-000000000001", "name": "Sulur Government Hospital", "category": "Hospital", "distance": "5 min", "display_order": 3, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000005", "project_id": "10000000-0000-4000-8000-000000000001", "name": "Hindusthan College of Engineering", "category": "School", "distance": "8 min", "display_order": 4, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000006", "project_id": "10000000-0000-4000-8000-000000000001", "name": "Coimbatore International Airport", "category": "Transit", "distance": "20 min", "display_order": 5, "is_active": true },
+
+  { "id": "60000000-0000-4000-8000-000000000007", "project_id": "10000000-0000-4000-8000-000000000002", "name": "Vidya Vikas Matric Hr Sec School", "category": "School", "distance": "3 min", "display_order": 0, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000008", "project_id": "10000000-0000-4000-8000-000000000002", "name": "Sulur Government Hospital", "category": "Hospital", "distance": "5 min", "display_order": 1, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000009", "project_id": "10000000-0000-4000-8000-000000000002", "name": "Sulur Daily Market", "category": "Shopping", "distance": "4 min", "display_order": 2, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000010", "project_id": "10000000-0000-4000-8000-000000000002", "name": "Sulur Railway Station", "category": "Transit", "distance": "10 min", "display_order": 3, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000011", "project_id": "10000000-0000-4000-8000-000000000002", "name": "Kumaraguru College of Technology", "category": "School", "distance": "12 min", "display_order": 4, "is_active": true },
+
+  { "id": "60000000-0000-4000-8000-000000000012", "project_id": "10000000-0000-4000-8000-000000000003", "name": "Sulur Bus Stop", "category": "Transit", "distance": "2 min", "display_order": 0, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000013", "project_id": "10000000-0000-4000-8000-000000000003", "name": "Suguna Vidyalaya Matric Hr Sec School", "category": "School", "distance": "4 min", "display_order": 1, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000014", "project_id": "10000000-0000-4000-8000-000000000003", "name": "Sulur Daily Market", "category": "Shopping", "distance": "4 min", "display_order": 2, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000015", "project_id": "10000000-0000-4000-8000-000000000003", "name": "Hindusthan College of Engineering", "category": "School", "distance": "8 min", "display_order": 3, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000016", "project_id": "10000000-0000-4000-8000-000000000003", "name": "Coimbatore International Airport", "category": "Transit", "distance": "20 min", "display_order": 4, "is_active": true },
+
+  { "id": "60000000-0000-4000-8000-000000000017", "project_id": "10000000-0000-4000-8000-000000000004", "name": "Sulur Daily Market", "category": "Shopping", "distance": "4 min", "display_order": 0, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000018", "project_id": "10000000-0000-4000-8000-000000000004", "name": "Vidya Vikas Matric Hr Sec School", "category": "School", "distance": "3 min", "display_order": 1, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000019", "project_id": "10000000-0000-4000-8000-000000000004", "name": "Sulur Government Hospital", "category": "Hospital", "distance": "5 min", "display_order": 2, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000020", "project_id": "10000000-0000-4000-8000-000000000004", "name": "Sulur Railway Station", "category": "Transit", "distance": "10 min", "display_order": 3, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000021", "project_id": "10000000-0000-4000-8000-000000000004", "name": "KG Hospital, Coimbatore", "category": "Hospital", "distance": "11 min", "display_order": 4, "is_active": true },
+
+  { "id": "60000000-0000-4000-8000-000000000022", "project_id": "10000000-0000-4000-8000-000000000005", "name": "Sulur Bus Stop", "category": "Transit", "distance": "2 min", "display_order": 0, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000023", "project_id": "10000000-0000-4000-8000-000000000005", "name": "Suguna Vidyalaya Matric Hr Sec School", "category": "School", "distance": "4 min", "display_order": 1, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000024", "project_id": "10000000-0000-4000-8000-000000000005", "name": "Sulur Daily Market", "category": "Shopping", "distance": "4 min", "display_order": 2, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000025", "project_id": "10000000-0000-4000-8000-000000000005", "name": "Coimbatore Junction", "category": "Transit", "distance": "16 min", "display_order": 3, "is_active": true },
+
+  { "id": "60000000-0000-4000-8000-000000000026", "project_id": "10000000-0000-4000-8000-000000000006", "name": "Sulur Government Hospital", "category": "Hospital", "distance": "5 min", "display_order": 0, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000027", "project_id": "10000000-0000-4000-8000-000000000006", "name": "Sulur Railway Station", "category": "Transit", "distance": "10 min", "display_order": 1, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000028", "project_id": "10000000-0000-4000-8000-000000000006", "name": "KG Hospital, Coimbatore", "category": "Hospital", "distance": "11 min", "display_order": 2, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000029", "project_id": "10000000-0000-4000-8000-000000000006", "name": "Coimbatore Junction", "category": "Transit", "distance": "16 min", "display_order": 3, "is_active": true },
+  { "id": "60000000-0000-4000-8000-000000000030", "project_id": "10000000-0000-4000-8000-000000000006", "name": "Brookefields Mall", "category": "Shopping", "distance": "22 min", "display_order": 4, "is_active": true }
+]

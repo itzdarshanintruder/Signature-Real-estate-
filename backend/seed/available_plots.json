@@ -1,0 +1,28 @@
+[
+  { "id": "30000000-0000-4000-8000-000000000001", "project_id": "10000000-0000-4000-8000-000000000001", "size": "20×30", "dimensions": "600 sq. ft.", "facing": "East", "price_inr": 960000, "status": "available", "display_order": 0, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000002", "project_id": "10000000-0000-4000-8000-000000000001", "size": "24×40", "dimensions": "960 sq. ft.", "facing": "North", "price_inr": 1536000, "status": "available", "display_order": 1, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000003", "project_id": "10000000-0000-4000-8000-000000000001", "size": "30×40", "dimensions": "1200 sq. ft.", "facing": "Garden-facing", "price_inr": 1920000, "status": "reserved", "display_order": 2, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000004", "project_id": "10000000-0000-4000-8000-000000000001", "size": "30×40", "dimensions": "1200 sq. ft.", "facing": "West", "price_inr": 1920000, "status": "available", "display_order": 3, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000005", "project_id": "10000000-0000-4000-8000-000000000001", "size": "30×50", "dimensions": "1500 sq. ft.", "facing": "Corner", "price_inr": 2400000, "status": "available", "display_order": 4, "is_active": true },
+
+  { "id": "30000000-0000-4000-8000-000000000006", "project_id": "10000000-0000-4000-8000-000000000002", "size": "30×40", "dimensions": "1200 sq. ft.", "facing": "Garden-facing", "price_inr": 2200000, "status": "available", "display_order": 0, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000007", "project_id": "10000000-0000-4000-8000-000000000002", "size": "30×40", "dimensions": "1200 sq. ft.", "facing": "East", "price_inr": 2100000, "status": "reserved", "display_order": 1, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000008", "project_id": "10000000-0000-4000-8000-000000000002", "size": "30×50", "dimensions": "1500 sq. ft.", "facing": "Corner", "price_inr": 2700000, "status": "available", "display_order": 2, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000009", "project_id": "10000000-0000-4000-8000-000000000002", "size": "30×50", "dimensions": "1500 sq. ft.", "facing": "Garden-facing", "price_inr": 2800000, "status": "sold", "display_order": 3, "is_active": true },
+
+  { "id": "30000000-0000-4000-8000-000000000010", "project_id": "10000000-0000-4000-8000-000000000003", "size": "20×30", "dimensions": "600 sq. ft.", "facing": "East", "price_inr": 960000, "status": "available", "display_order": 0, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000011", "project_id": "10000000-0000-4000-8000-000000000003", "size": "24×40", "dimensions": "960 sq. ft.", "facing": "North", "price_inr": 1536000, "status": "available", "display_order": 1, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000012", "project_id": "10000000-0000-4000-8000-000000000003", "size": "20×30", "dimensions": "600 sq. ft.", "facing": "Garden-facing", "price_inr": 1020000, "status": "reserved", "display_order": 2, "is_active": true },
+
+  { "id": "30000000-0000-4000-8000-000000000013", "project_id": "10000000-0000-4000-8000-000000000004", "size": "24×40", "dimensions": "960 sq. ft.", "facing": "Green-facing", "price_inr": 1650000, "status": "available", "display_order": 0, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000014", "project_id": "10000000-0000-4000-8000-000000000004", "size": "30×40", "dimensions": "1200 sq. ft.", "facing": "East", "price_inr": 2050000, "status": "available", "display_order": 1, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000015", "project_id": "10000000-0000-4000-8000-000000000004", "size": "30×40", "dimensions": "1200 sq. ft.", "facing": "Green-facing", "price_inr": 2150000, "status": "reserved", "display_order": 2, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000016", "project_id": "10000000-0000-4000-8000-000000000004", "size": "24×40", "dimensions": "960 sq. ft.", "facing": "North", "price_inr": 1600000, "status": "sold", "display_order": 3, "is_active": true },
+
+  { "id": "30000000-0000-4000-8000-000000000017", "project_id": "10000000-0000-4000-8000-000000000005", "size": "20×30", "dimensions": "600 sq. ft.", "facing": "East", "price_inr": 1250000, "status": "sold", "display_order": 0, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000018", "project_id": "10000000-0000-4000-8000-000000000005", "size": "20×30", "dimensions": "600 sq. ft.", "facing": "West", "price_inr": 1250000, "status": "sold", "display_order": 1, "is_active": true },
+
+  { "id": "30000000-0000-4000-8000-000000000019", "project_id": "10000000-0000-4000-8000-000000000006", "size": "35×50", "dimensions": "1750 sq. ft.", "facing": "East", "price_inr": 2800000, "status": "available", "display_order": 0, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000020", "project_id": "10000000-0000-4000-8000-000000000006", "size": "40×50", "dimensions": "2000 sq. ft.", "facing": "North", "price_inr": 3200000, "status": "available", "display_order": 1, "is_active": true },
+  { "id": "30000000-0000-4000-8000-000000000021", "project_id": "10000000-0000-4000-8000-000000000006", "size": "40×50", "dimensions": "2000 sq. ft.", "facing": "Corner", "price_inr": 3400000, "status": "reserved", "display_order": 2, "is_active": true }
+]

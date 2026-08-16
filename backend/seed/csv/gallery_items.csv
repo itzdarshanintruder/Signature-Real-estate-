@@ -1,0 +1,10 @@
+id,category,src,alt,caption,display_order,is_active
+90000000-0000-4000-8000-000000000001,Master Plan,,Signature City overall master plan,,0,true
+90000000-0000-4000-8000-000000000002,Master Plan,,Avenue layout and zoning detail,,1,true
+90000000-0000-4000-8000-000000000003,Lifestyle,,Landscaped parks and walking trails,,2,true
+90000000-0000-4000-8000-000000000004,Lifestyle,,The Signature City clubhouse at dusk,,3,true
+90000000-0000-4000-8000-000000000005,Lifestyle,,Community hall interior,,4,true
+90000000-0000-4000-8000-000000000006,Progress,,Internal road laying works,,5,true
+90000000-0000-4000-8000-000000000007,Progress,,Landscaping and planting underway,,6,true
+90000000-0000-4000-8000-000000000008,Approvals,,DTCP approval certificate,,7,true
+90000000-0000-4000-8000-000000000009,Approvals,,RERA registration details,,8,true

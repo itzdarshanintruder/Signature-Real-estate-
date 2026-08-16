@@ -1,0 +1,5 @@
+[
+  { "id": "c0000000-0000-4000-8000-000000000001", "quote": "The layout, the approvals, the planning — everything spoke of care. We invested without a single hesitation.", "name": "R. Mehta", "role": "Investor", "display_order": 0, "is_active": true },
+  { "id": "c0000000-0000-4000-8000-000000000002", "quote": "After living in a cramped apartment, buying a Signature plot felt like buying space to finally breathe.", "name": "S. Krishnan", "role": "Homeowner", "display_order": 1, "is_active": true },
+  { "id": "c0000000-0000-4000-8000-000000000003", "quote": "Clear title, transparent pricing, and a team that actually answers the phone. That is rare these days.", "name": "A. Nair", "role": "NRI Investor", "display_order": 2, "is_active": true }
+]

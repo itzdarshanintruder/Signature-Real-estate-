@@ -1,0 +1,220 @@
+[
+  {
+    "id": "10000000-0000-4000-8000-000000000001",
+    "slug": "signature-city-sulur",
+    "title": "Signature City — Sulur",
+    "status": "available",
+    "district": "Sulur, Coimbatore",
+    "location": "Near Sulur, Coimbatore",
+    "plot_sizes": ["20×30", "24×40", "30×40", "30×50"],
+    "starting_price_inr": 960000,
+    "acreage": "12 Acres",
+    "tagline": "232 premium plots, minutes from the airport",
+    "description": "The flagship release of Signature City — a 12-acre, DTCP approved gated enclave of 232 premium residential plots near Sulur, with black top roads, parks and 24×7 security.",
+    "short_description": "The flagship gated enclave near Sulur — 12 acres, black top roads, parks and 24×7 security.",
+    "overview": [
+      "Signature City is a 12-acre, DTCP approved gated community of 232 premium residential plots near Sulur, Coimbatore. Wide black top roads (24, 30 and 33 ft), shaded avenue trees and landscaped parks wrap a layout that is planned around people, not just parcels.",
+      "Every plot enjoys a clear title, dedicated groundwater, solar-lit avenues and round-the-clock security behind a full compound wall and grand arch. The airport is 20 minutes away, while schools, hospitals and colleges sit within a 2 to 11 minute drive."
+    ],
+    "features": [
+      "DTCP approved · 232 premium plots",
+      "12-acre gated community with 24×7 security",
+      "Black top roads 24 / 30 / 33 ft",
+      "Grand arch + full compound wall",
+      "Solar street lights on every avenue",
+      "Ground water + underground drainage"
+    ],
+    "amenities": ["Gated Community", "24×7 Security", "Parks", "Avenue Trees", "Solar Street Lights"],
+    "investment_benefits": [
+      "Clear, DTCP-approved title on every plot",
+      "Steady appreciation in Coimbatore's growth corridor",
+      "Ready infrastructure — black top roads, water and drainage",
+      "Bank loan eligible with minimal paperwork"
+    ],
+    "is_featured": true,
+    "display_order": 1,
+    "map_url": null,
+    "is_active": true,
+    "created_at": "2026-08-03T00:00:00.000Z",
+    "updated_at": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000002",
+    "slug": "the-golden-grove",
+    "title": "The Golden Grove",
+    "status": "premium",
+    "district": "Premium Zone",
+    "location": "Premium Block A · Near Sulur",
+    "plot_sizes": ["30×40", "30×50"],
+    "starting_price_inr": 2100000,
+    "acreage": "2.2 Acres",
+    "tagline": "Garden-facing, reserved",
+    "description": "Our most intimate block — a limited set of garden-facing and corner plots where every home looks out onto greens, not neighbours.",
+    "short_description": "A limited set of garden-facing and corner plots, each opening onto greens.",
+    "overview": [
+      "The Golden Grove is our most intimate block — a limited release of garden-facing and corner plots where privacy is designed in. Every home looks out onto greens rather than neighbours, and the extended setbacks give your architect more to work with.",
+      "Set beside the estate parks and ringed by mature avenue trees, this is the block for those who want fewer homes and more horizon."
+    ],
+    "features": [
+      "Limited garden-facing plots",
+      "Corner plots with double access",
+      "Extended setbacks for homes",
+      "Privileged access to parks"
+    ],
+    "amenities": ["Landscaped Parks", "24×7 Security", "Gated Community"],
+    "investment_benefits": [
+      "Rare, limited-supply garden-facing plots",
+      "Highest-value plots in Signature City",
+      "Strong resale demand for green frontage",
+      "Clear DTCP-approved title"
+    ],
+    "is_featured": true,
+    "display_order": 2,
+    "map_url": null,
+    "is_active": true,
+    "created_at": "2026-08-03T00:00:00.000Z",
+    "updated_at": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000003",
+    "slug": "heritage-avenues",
+    "title": "Heritage Avenues",
+    "status": "launching",
+    "district": "Northern Belt",
+    "location": "Avenue Block B · Near Sulur",
+    "plot_sizes": ["20×30", "24×40"],
+    "starting_price_inr": 960000,
+    "acreage": "3.1 Acres",
+    "tagline": "Launching soon",
+    "description": "A tree-lined extension to the Signature community, designed in the same spirit — calm, secure and thoughtfully planned.",
+    "short_description": "A tree-lined extension of the community — early-bird pricing now open.",
+    "overview": [
+      "Heritage Avenues extends the Signature spirit north — a tree-lined layout of calm streets where a park sits within a few steps of every home. The design carries the same discipline as Phase One: black top roads, clean utilities and a secure perimeter.",
+      "Launch pricing rewards early registrations, making this one of the most accessible entries into Signature City."
+    ],
+    "features": [
+      "Tree-lined avenues",
+      "Perimeter landscaping",
+      "Community parks every 4 streets",
+      "Early-bird pricing"
+    ],
+    "amenities": ["Landscaped Parks", "Solar Street Lights", "Avenue Trees"],
+    "investment_benefits": [
+      "Lowest entry price into Signature City",
+      "Launch pricing with early-bird benefits",
+      "Same DTCP-approved clear-title standard",
+      "Positioned on the Sulur growth axis"
+    ],
+    "is_featured": false,
+    "display_order": 3,
+    "map_url": null,
+    "is_active": true,
+    "created_at": "2026-08-03T00:00:00.000Z",
+    "updated_at": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000004",
+    "slug": "crown-meadows",
+    "title": "Crown Meadows",
+    "status": "available",
+    "district": "Green Zone",
+    "location": "Green Belt Block · Near Sulur",
+    "plot_sizes": ["24×40", "30×40"],
+    "starting_price_inr": 1536000,
+    "acreage": "2.6 Acres",
+    "tagline": "Open skies, open spaces",
+    "description": "Spacious plots facing the community greens — ideal for those who want generous setbacks and open views.",
+    "short_description": "Green-facing plots with wide 30 ft roads and open views.",
+    "overview": [
+      "Crown Meadows sits on the sunnier edge of the layout — open skies, wide 30 ft internal roads and plots that face the community greens rather than the street.",
+      "The block trades intimacy for space: generous setbacks, low density and uninterrupted views of the landscaped park at its heart."
+    ],
+    "features": [
+      "Green-facing plots",
+      "Wide 30 ft internal roads",
+      "Proximity to parks"
+    ],
+    "amenities": ["Landscaped Parks", "24×7 Security", "Gated Community"],
+    "investment_benefits": [
+      "Open, green-facing plots with clear title",
+      "Low density — larger green reserves",
+      "Wide roads suited to generous home designs",
+      "Bank loan eligible"
+    ],
+    "is_featured": true,
+    "display_order": 4,
+    "map_url": null,
+    "is_active": true,
+    "created_at": "2026-08-03T00:00:00.000Z",
+    "updated_at": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000005",
+    "slug": "ivory-courts",
+    "title": "Ivory Courts",
+    "status": "sold-out",
+    "district": "Established",
+    "location": "South Block · Near Sulur",
+    "plot_sizes": ["20×30"],
+    "starting_price_inr": 1250000,
+    "acreage": "1.6 Acres",
+    "tagline": "A chapter completed",
+    "description": "Our first completed block — sold out, with families already building their homes and a vibrant community taking root.",
+    "short_description": "Our first completed block — sold out, with homes already rising.",
+    "overview": [
+      "Ivory Courts is Signature City's first completed chapter — fully sold, with families already building and a vibrant community taking root. Its streets are a living proof of concept for everything the estate promises.",
+      "Occasionally a resale plot appears here; register your interest and we'll let you know first."
+    ],
+    "features": ["Fully sold", "Residents building homes", "Active community"],
+    "amenities": ["Compound Wall", "Solar Street Lights", "Avenue Trees"],
+    "investment_benefits": [
+      "Proven demand — sold out at premium",
+      "Resale value appreciation demonstrated",
+      "Active, settled community",
+      "Ideal for investors seeking resale stock"
+    ],
+    "is_featured": false,
+    "display_order": 5,
+    "map_url": null,
+    "is_active": true,
+    "created_at": "2026-08-03T00:00:00.000Z",
+    "updated_at": "2026-08-03T00:00:00.000Z"
+  },
+  {
+    "id": "10000000-0000-4000-8000-000000000006",
+    "slug": "the-estate-block",
+    "title": "The Estate Block",
+    "status": "premium",
+    "district": "Premium Zone",
+    "location": "Premium Block B · Near Sulur",
+    "plot_sizes": ["35×50", "40×50"],
+    "starting_price_inr": 2800000,
+    "acreage": "2.1 Acres",
+    "tagline": "For those who build legacies",
+    "description": "Our largest plots, in the most private corner of Signature City. An exclusive block for a select few addresses.",
+    "short_description": "Our largest plots in the most private corner of the estate.",
+    "overview": [
+      "The Estate Block is the rarest offering in Signature City — our largest plots, set in the most private corner of the estate with a dedicated service road and exclusive park access.",
+      "With 35×50 and 40×50 frontages, these addresses are designed for grand homes and lasting legacies — a deliberately small number of plots for a select few owners."
+    ],
+    "features": [
+      "Largest available plots",
+      "Private, quiet corner of the estate",
+      "Dedicated service road",
+      "Exclusive estate amenities"
+    ],
+    "amenities": ["Gated Community", "24×7 Security", "Landscaped Parks"],
+    "investment_benefits": [
+      "Rare 2000 sq. ft. frontages",
+      "Exclusive, low-density private block",
+      "Dedicated service road access",
+      "Positioned for highest long-term value"
+    ],
+    "is_featured": false,
+    "display_order": 6,
+    "map_url": null,
+    "is_active": true,
+    "created_at": "2026-08-03T00:00:00.000Z",
+    "updated_at": "2026-08-03T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: replace the domain with the production domain before launch. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.signaturecity.in/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.signaturecity.in/projects</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://www.signaturecity.in/projects/signature-city-phase-one</loc><priority>0.8</priority></url>
+  <url><loc>https://www.signaturecity.in/projects/the-golden-grove</loc><priority>0.8</priority></url>
+  <url><loc>https://www.signaturecity.in/projects/heritage-avenues</loc><priority>0.8</priority></url>
+  <url><loc>https://www.signaturecity.in/projects/crown-meadows</loc><priority>0.8</priority></url>
+  <url><loc>https://www.signaturecity.in/projects/ivory-courts</loc><priority>0.8</priority></url>
+  <url><loc>https://www.signaturecity.in/projects/the-estate-block</loc><priority>0.8</priority></url>
+  <url><loc>https://www.signaturecity.in/gallery</loc><priority>0.7</priority></url>
+  <url><loc>https://www.signaturecity.in/amenities</loc><priority>0.7</priority></url>
+  <url><loc>https://www.signaturecity.in/about</loc><priority>0.7</priority></url>
+  <url><loc>https://www.signaturecity.in/contact</loc><priority>0.8</priority></url>
+  <url><loc>https://www.signaturecity.in/faq</loc><priority>0.7</priority></url>
+  <url><loc>https://www.signaturecity.in/privacy</loc><priority>0.3</priority></url>
+  <url><loc>https://www.signaturecity.in/terms</loc><priority>0.3</priority></url>
+</urlset>
