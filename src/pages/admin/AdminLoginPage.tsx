@@ -68,12 +68,19 @@ export default function AdminLoginPage() {
     <>
       <Seo title="Admin Login" description="Sign in to the Signature City admin dashboard." />
 
-      <div className="flex min-h-svh flex-col bg-ink-900">
+      <div className="flex h-screen flex-col overflow-hidden bg-ink-900">
         <header className="border-b border-gold-500/20">
           <Container className="flex h-16 items-center justify-between">
-            <p className="font-display text-sm tracking-[0.3em] text-gold-400 uppercase">
-              Signature City · Admin
-            </p>
+            <div className="flex items-center gap-2.5">
+              <img
+                src="/logo.jpg"
+                alt="VIP Housing and Properties Logo"
+                className="h-8 w-8 rounded-full object-cover border border-gold-500/40 bg-white"
+              />
+              <p className="font-display text-sm tracking-[0.2em] text-gold-400 uppercase">
+                VIP Housing · Admin
+              </p>
+            </div>
             <Link
               to="/"
               className="inline-flex items-center gap-2 text-sm font-semibold text-cream-50/70 transition-colors hover:text-cream-50"
@@ -84,7 +91,7 @@ export default function AdminLoginPage() {
           </Container>
         </header>
 
-        <main className="flex flex-1 items-center justify-center px-4 py-16">
+        <main className="flex flex-1 items-center justify-center overflow-y-auto px-4 py-8">
           <div className="w-full max-w-md border border-gold-500/25 bg-ink-800/60 p-8 sm:p-10">
             <span className="mb-6 flex h-12 w-12 items-center justify-center border border-gold-500/30 text-gold-400">
               <LockKeyhole className="h-6 w-6" aria-hidden />

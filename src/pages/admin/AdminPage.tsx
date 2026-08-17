@@ -116,10 +116,11 @@ export default function AdminPage() {
     <>
       <Seo title="Admin Dashboard" description="Signature City customer enquiries dashboard." />
 
-      <AdminHeader />
+      <div className="flex h-screen flex-col overflow-hidden bg-cream-100">
+        <AdminHeader />
 
-      <main className="min-h-svh bg-cream-100 pb-24">
-        <Container className="pt-10 md:pt-14">
+        <main className="flex-1 overflow-y-auto pb-16">
+          <Container className="pt-8 md:pt-10">
           <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="mb-3 flex items-center gap-3 text-xs font-semibold tracking-[0.28em] text-gold-700 uppercase">
@@ -235,7 +236,8 @@ export default function AdminPage() {
             )}
           </div>
         </Container>
-      </main>
+        </main>
+      </div>
     </>
   )
 }

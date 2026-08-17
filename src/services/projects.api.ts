@@ -1,44 +1,40 @@
-import { IS_API_ENABLED } from '@/config/env'
+import { useLocalStore } from '@/store/local-store'
 import { projects as staticProjects } from '@/data/projects'
 import type { Project } from '@/types/project'
-import { apiFetch } from '@/services/api-client'
 
 export async function fetchProjects(): Promise<Project[]> {
-  if (!IS_API_ENABLED) return staticProjects
+  const local = useLocalStore.getState().projects
 
-  const data = await apiFetch<any[]>('/projects')
+  const localConverted: Project[] = local
+    .filter((p) => p.isActive)
+    .map((p) => ({
+      id: p.id,
+      slug: p.slug,
+      title: p.title,
+      location: p.location,
+      district: p.district,
+      status: p.status,
+      plotSizes: p.plotSizes,
+      startingPriceInr: p.startingPriceInr,
+      acreage: p.acreage,
+      tagline: p.tagline,
+      description: p.description,
+      shortDescription: p.shortDescription,
+      overview: [p.description || p.shortDescription || p.title],
+      features: p.features,
+      amenities: p.amenities,
+      images: p.imageUrl ? [{ src: p.imageUrl, alt: p.title }] : [],
+      gallery: p.layoutImageUrl ? [{ src: p.layoutImageUrl, alt: 'Layout Plan' }] : [],
+      availablePlots: [],
+      pricing: [],
+      milestones: [],
+      investmentBenefits: [],
+      nearbyPlaces: [],
+      faq: [],
+      isFeatured: p.isFeatured,
+    }))
 
-  return data.map((item) => ({
-    id: String(item.id),
-    slug: item.slug,
-    title: item.name,
-    location: item.location,
-    district: item.district,
-    status: item.status?.toLowerCase() ?? 'available',
-    plotSizes: ['30x40'],
-    startingPriceInr: Number(item.starting_price_inr),
-    acreage: item.total_area,
-    tagline: item.name,
-    description: item.description,
-    shortDescription: item.description,
-    overview: [item.description],
-    features: [],
-    amenities: [],
-    images: [
-      {
-        src: item.hero_image,
-        alt: item.name,
-      },
-    ],
-    gallery: [],
-    availablePlots: [],
-    pricing: [],
-    milestones: [],
-    investmentBenefits: [],
-    nearbyPlaces: [],
-    faq: [],
-    isFeatured: true,
-  }))
+  return [...localConverted, ...staticProjects]
 }
 
 export async function fetchProjectBySlug(slug: string): Promise<Project | null> {

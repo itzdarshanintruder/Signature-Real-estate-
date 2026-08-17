@@ -13,24 +13,19 @@ function Wordmark() {
     <Link
       to="/"
       aria-label={`${SITE.name} — home`}
-      className="group flex items-center gap-2.5"
+      className="group flex items-center gap-3"
     >
-      <span aria-hidden className="relative flex h-9 w-9 items-center justify-center">
-        <svg viewBox="0 0 64 64" className="h-9 w-9" fill="none">
-          <path
-            d="M32 8 L52 28 L32 56 L12 28 Z"
-            stroke="#C6A15B"
-            strokeWidth="3"
-            className="transition-all duration-500 group-hover:stroke-gold-400"
-          />
-        </svg>
-      </span>
+      <img
+        src="/logo.jpg"
+        alt="VIP Housing and Properties Logo"
+        className="h-10 w-10 rounded-full object-cover border border-gold-500/30 transition-transform duration-300 group-hover:scale-105"
+      />
       <span className="flex flex-col leading-none">
-        <span className="font-display text-lg font-semibold tracking-[0.16em] text-cream-50">
-          SIGNATURE
+        <span className="font-display text-lg font-bold tracking-[0.12em] text-cream-50">
+          VIP HOUSING
         </span>
-        <span className="font-display text-[0.65rem] tracking-[0.42em] text-gold-400">
-          CITY · PLOTS
+        <span className="font-display text-[0.62rem] tracking-[0.25em] text-gold-400">
+          &amp; PROPERTIES
         </span>
       </span>
     </Link>

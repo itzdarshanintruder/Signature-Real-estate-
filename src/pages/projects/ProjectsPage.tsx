@@ -52,13 +52,15 @@ export default function ProjectsPage() {
   const [page, setPage] = useState(1)
   const debouncedSearch = useDebouncedValue(filters.search.trim().toLowerCase(), 250)
 
-  const { districts, budgetOptions } = useMemo(() => {
-    const districtSet = [...new Set((projects ?? []).map((project) => project.district))]
-    return {
-      districts: districtSet.sort((a, b) => a.localeCompare(b)),
-      budgetOptions: [{ value: 'all', label: 'All Budgets' }, ...BUDGETS.map(({ value, label }) => ({ value, label }))],
-    }
-  }, [projects])
+  const budgetOptions = useMemo(
+    () => [{ value: 'all', label: 'All Budgets' }, ...BUDGETS.map(({ value, label }) => ({ value, label }))],
+    [],
+  )
+
+  const districts = useMemo(
+    () => ['Salem', 'Coimbatore', 'Tiruchirappalli (Trichy)', 'Namakkal', 'Dindigul'],
+    [],
+  )
 
   const filtered = useMemo(() => {
     if (!projects) return []

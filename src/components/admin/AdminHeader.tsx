@@ -1,12 +1,13 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { ArrowLeft, LayoutDashboard, LogOut, MapPinned } from 'lucide-react'
+import { ArrowLeft, Inbox, LayoutDashboard, LogOut, Building2 } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { useAuthStore } from '@/store/auth-store'
 import { cn } from '@/utils/cn'
 
 const adminNav = [
   { label: 'Contacts', to: '/admin', icon: LayoutDashboard },
-  { label: 'Plots', to: '/admin/plots', icon: MapPinned },
+  { label: 'Projects', to: '/admin/local-projects', icon: Building2 },
+  { label: 'Leads', to: '/admin/leads', icon: Inbox },
 ]
 
 /** Slim dark admin bar — section nav, session email, sign out. */
@@ -18,9 +19,16 @@ export function AdminHeader() {
   return (
     <header className="border-b border-gold-500/20 bg-ink-900">
       <Container className="flex h-16 flex-wrap items-center gap-x-6 gap-y-2">
-        <p className="font-display text-sm tracking-[0.3em] text-gold-400 uppercase">
-          Signature City · Admin
-        </p>
+        <Link to="/admin" className="flex items-center gap-2.5">
+          <img
+            src="/logo.jpg"
+            alt="VIP Housing and Properties Logo"
+            className="h-8 w-8 rounded-full object-cover border border-gold-500/40 bg-white"
+          />
+          <p className="font-display text-sm tracking-[0.2em] text-gold-400 uppercase">
+            VIP Housing · Admin
+          </p>
+        </Link>
 
         <nav aria-label="Admin sections" className="flex items-center gap-1">
           {adminNav.map(({ label, to, icon: Icon }) => (

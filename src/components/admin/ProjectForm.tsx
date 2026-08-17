@@ -42,6 +42,14 @@ const commasToList = (value: string): string[] =>
     .map((item) => item.trim())
     .filter(Boolean)
 
+export const AVAILABLE_DISTRICTS = [
+  'Salem',
+  'Coimbatore',
+  'Tiruchirappalli (Trichy)',
+  'Namakkal',
+  'Dindigul',
+] as const
+
 const projectSchema = z.object({
   title: z.string().trim().min(1, 'Please enter a project title').max(120, 'Keep the title under 120 characters'),
   slug: z
@@ -50,7 +58,9 @@ const projectSchema = z.object({
     .min(1, 'Please enter a slug')
     .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, 'Use lowercase letters, digits and hyphens only'),
   status: z.enum(PROJECT_STATUSES),
-  district: z.string().trim().min(1, 'Please enter a district / zone'),
+  district: z.enum(AVAILABLE_DISTRICTS, {
+    errorMap: () => ({ message: 'Please select a valid district' }),
+  }),
   location: z.string().trim().min(1, 'Please enter a location'),
   acreage: z.string().trim().min(1, 'Please enter an acreage'),
   tagline: z.string().trim(),
@@ -235,15 +245,20 @@ export function ProjectForm({
 
             <div>
               <Label htmlFor="project-district" required>
-                District / Zone
+                District
               </Label>
-              <Input
+              <Select
                 id="project-district"
-                placeholder="e.g. Coimbatore"
                 invalid={Boolean(errors.district)}
                 aria-invalid={Boolean(errors.district)}
                 {...register('district')}
-              />
+              >
+                {AVAILABLE_DISTRICTS.map((d) => (
+                  <option key={d} value={d}>
+                    {d}
+                  </option>
+                ))}
+              </Select>
               <FieldError message={errors.district?.message} />
             </div>
           </div>

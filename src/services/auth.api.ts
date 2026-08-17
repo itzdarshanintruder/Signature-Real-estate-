@@ -4,18 +4,30 @@ import type { AdminUser, LoginCredentials, LoginResponse } from '@/types/auth'
 
 const AUTH_BASE_URL = env.VITE_AUTH_API_URL
 
-function ensureAuthEnabled() {
-  if (!IS_AUTH_ENABLED) {
-    throw new ApiError('AUTH_NOT_CONFIGURED', 'Admin auth is not configured (VITE_AUTH_API_URL is empty).')
-  }
+// ─── DEV BYPASS ──────────────────────────────────────────────────────────────
+// When VITE_AUTH_API_URL is not set, skip the real auth backend and allow
+// any credentials so the admin panel can be used without a live database.
+const DEV_FAKE_TOKEN = 'dev-bypass-token'
+const DEV_MOCK_USER: AdminUser = {
+  id: 0,
+  email: 'dev@local.test',
+  name: 'Dev Admin',
+  role: 'admin',
 }
+// ─────────────────────────────────────────────────────────────────────────────
 
 /**
  * Exchange email + password for a JWT via `POST /auth/login`.
  * Returns the raw `authToken` — never persisted to storage.
+ *
+ * DEV: When auth is not configured, accepts any input and returns a fake token.
  */
 export async function login(credentials: LoginCredentials): Promise<string> {
-  ensureAuthEnabled()
+  if (!IS_AUTH_ENABLED) {
+    // Dev bypass — no backend required; any credentials are accepted.
+    console.warn('[auth] DEV BYPASS: auth backend not configured, accepting any credentials.')
+    return DEV_FAKE_TOKEN
+  }
 
   const response = await apiFetch<LoginResponse>('/auth/login', {
     baseUrl: AUTH_BASE_URL,
@@ -34,9 +46,13 @@ export async function login(credentials: LoginCredentials): Promise<string> {
 /**
  * Validate the current session token via `GET /auth/me`.
  * Returns the `admin_users` record for the authenticated admin.
+ *
+ * DEV: When auth is not configured, returns a mock admin user.
  */
 export async function fetchCurrentUser(): Promise<AdminUser> {
-  ensureAuthEnabled()
+  if (!IS_AUTH_ENABLED) {
+    return DEV_MOCK_USER
+  }
 
   return apiFetch<AdminUser>('/auth/me', {
     baseUrl: AUTH_BASE_URL,

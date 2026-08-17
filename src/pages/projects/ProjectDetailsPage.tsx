@@ -67,11 +67,11 @@ function MapPlaceholder({ project }: { project: Project }) {
       <div aria-hidden className="bg-gold-glow absolute inset-0 opacity-40" />
       {/* Stylised roads */}
       <svg aria-hidden viewBox="0 0 400 300" className="absolute inset-0 h-full w-full">
-        <path d="M0 90 L400 90" stroke="#C6A15B" strokeWidth="3" opacity="0.5" />
-        <path d="M0 200 L400 200" stroke="#C6A15B" strokeWidth="2" opacity="0.3" />
-        <path d="M120 0 L120 300" stroke="#C6A15B" strokeWidth="3" opacity="0.5" />
-        <path d="M270 0 L270 300" stroke="#C6A15B" strokeWidth="2" opacity="0.35" />
-        <path d="M0 90 L120 0 M400 90 L270 200" stroke="#C6A15B" strokeWidth="1.5" opacity="0.2" />
+        <path d="M0 90 L400 90" stroke="#2b8b8f" strokeWidth="3" opacity="0.5" />
+        <path d="M0 200 L400 200" stroke="#2b8b8f" strokeWidth="2" opacity="0.3" />
+        <path d="M120 0 L120 300" stroke="#2b8b8f" strokeWidth="3" opacity="0.5" />
+        <path d="M270 0 L270 300" stroke="#2b8b8f" strokeWidth="2" opacity="0.35" />
+        <path d="M0 90 L120 0 M400 90 L270 200" stroke="#2b8b8f" strokeWidth="1.5" opacity="0.2" />
       </svg>
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
         <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full border border-gold-500/40 bg-gold-500/15 text-gold-400">

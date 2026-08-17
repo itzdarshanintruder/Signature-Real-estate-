@@ -6,6 +6,7 @@ import { AdminRouteGuard } from '@/components/admin/AdminRouteGuard'
 
 const HomePage = lazy(() => import('@/pages/home/HomePage'))
 const ProjectsPage = lazy(() => import('@/pages/projects/ProjectsPage'))
+const LocalProjectsPage = lazy(() => import('@/pages/projects/LocalProjectsPage'))
 const ProjectDetailsPage = lazy(() => import('@/pages/projects/ProjectDetailsPage'))
 const GalleryPage = lazy(() => import('@/pages/gallery/GalleryPage'))
 const AmenitiesPage = lazy(() => import('@/pages/amenities/AmenitiesPage'))
@@ -20,6 +21,8 @@ const AdminLoginPage = lazy(() => import('@/pages/admin/AdminLoginPage'))
 const AdminPlotsPage = lazy(() => import('@/pages/admin/AdminPlotsPage'))
 const PlotEditorPage = lazy(() => import('@/pages/admin/PlotEditorPage'))
 const GalleryManagerPage = lazy(() => import('@/pages/admin/GalleryManagerPage'))
+const AdminLocalProjectsPage = lazy(() => import('@/pages/admin/AdminLocalProjectsPage'))
+const AdminLeadsPage = lazy(() => import('@/pages/admin/AdminLeadsPage'))
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -38,6 +41,7 @@ export function AppRouter() {
           <Route element={<PublicLayout />}>
             <Route path="/" element={<HomePage />} />
             <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/our-projects" element={<LocalProjectsPage />} />
             <Route path="/projects/:slug" element={<ProjectDetailsPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/amenities" element={<AmenitiesPage />} />
@@ -86,6 +90,22 @@ export function AppRouter() {
             element={
               <AdminRouteGuard>
                 <GalleryManagerPage />
+              </AdminRouteGuard>
+            }
+          />
+          <Route
+            path="/admin/local-projects"
+            element={
+              <AdminRouteGuard>
+                <AdminLocalProjectsPage />
+              </AdminRouteGuard>
+            }
+          />
+          <Route
+            path="/admin/leads"
+            element={
+              <AdminRouteGuard>
+                <AdminLeadsPage />
               </AdminRouteGuard>
             }
           />

@@ -20,15 +20,24 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           {/* Brand */}
           <div>
-            <p className="font-display text-2xl font-semibold tracking-[0.16em] text-cream-50">
-              SIGNATURE <span className="text-gold-400">CITY</span>
-            </p>
-            <p className="mt-1 text-[0.65rem] tracking-[0.42em] text-gold-400 uppercase">
-              Premium Residential Plots
-            </p>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed">
-              DTCP approved residential plots, planned with the care of an architect and
-              the integrity of a promise kept.
+            <div className="flex items-center gap-3">
+              <img
+                src="/logo.jpg"
+                alt="VIP Housing and Properties Logo"
+                className="h-12 w-12 rounded-full object-cover border border-gold-500/40 bg-white"
+              />
+              <div>
+                <p className="font-display text-xl font-bold tracking-[0.12em] text-cream-50">
+                  VIP HOUSING
+                </p>
+                <p className="text-[0.62rem] tracking-[0.25em] text-gold-400 uppercase">
+                  &amp; Properties
+                </p>
+              </div>
+            </div>
+            <p className="mt-5 max-w-sm text-sm leading-relaxed">
+              Building trust. Creating homes. DTCP approved residential plots, planned with the care
+              of an architect and the integrity of a promise kept.
             </p>
             <div className="mt-6 flex items-center gap-3">
               {SOCIALS.map(({ icon: Icon, label, href }) => (

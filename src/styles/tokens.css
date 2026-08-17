@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Champagne Gold (primary accent) ---- */
-  --color-gold-50: #fbf7ef;
-  --color-gold-100: #f3ead8;
-  --color-gold-200: #e6d4ac;
-  --color-gold-300: #d9be80;
-  --color-gold-400: #cda75f;
-  --color-gold-500: #c6a15b;
-  --color-gold-600: #a98445;
-  --color-gold-700: #86693a;
-  --color-gold-800: #5c4a2b;
-  --color-gold-900: #3b2f1e;
+  /* ---- Teal Primary (VIP Housing primary) ---- */
+  --color-gold-50: #f0f9fb;
+  --color-gold-100: #d9f0f4;
+  --color-gold-200: #b8e1e9;
+  --color-gold-300: #87ccd9;
+  --color-gold-400: #5eb8ca;
+  --color-gold-500: #2b8b8f;
+  --color-gold-600: #247278;
+  --color-gold-700: #1d5a61;
+  --color-gold-800: #164350;
+  --color-gold-900: #0f2b2e;
 
   /* ---- Warm Ink (near-black neutral) ---- */
   --color-ink-50: #f6f6f5;
@@ -32,6 +32,42 @@
   --color-cream-200: #f0ebe1;
   --color-cream-300: #e4dccd;
 
+  /* ---- Orange Accent (VIP Housing secondary) ---- */
+  --color-orange-50: #fdf6f3;
+  --color-orange-100: #fde6dd;
+  --color-orange-200: #fbd1bd;
+  --color-orange-300: #f8ad8f;
+  --color-orange-400: #f48a64;
+  --color-orange-500: #c65d4b;
+  --color-orange-600: #b34d3f;
+  --color-orange-700: #963d33;
+  --color-orange-800: #6b2c24;
+  --color-orange-900: #451b17;
+
+  /* ---- Green Accent (VIP Housing tertiary) ---- */
+  --color-green-50: #f3f7f5;
+  --color-green-100: #e1eceb;
+  --color-green-200: #c8dcd8;
+  --color-green-300: #a0c9bc;
+  --color-green-400: #72b09f;
+  --color-green-500: #4a7c6e;
+  --color-green-600: #3d6659;
+  --color-green-700: #315045;
+  --color-green-800: #213a32;
+  --color-green-900: #152420;
+
+  /* ---- Yellow/Gold Accent (VIP Housing quaternary) ---- */
+  --color-yellow-50: #fffbf0;
+  --color-yellow-100: #fff1d6;
+  --color-yellow-200: #ffe5ac;
+  --color-yellow-300: #ffd47a;
+  --color-yellow-400: #ffc94d;
+  --color-yellow-500: #d4a63d;
+  --color-yellow-600: #b89032;
+  --color-yellow-700: #8d6b27;
+  --color-yellow-800: #5f481a;
+  --color-yellow-900: #3d2f11;
+
   /* ---- Typography ---- */
   --font-display: "Cinzel", Georgia, "Times New Roman", serif;
   --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
@@ -39,9 +75,9 @@
 
   /* ---- Shadows ---- */
   --shadow-sm: 0 1px 2px rgb(11 11 10 / 0.05);
-  --shadow-md: 0 8px 24px rgb(11 11 10 / 0.08);
-  --shadow-lg: 0 16px 40px rgb(11 11 10 / 0.12);
-  --shadow-gold: 0 8px 24px rgb(198 161 91 / 0.35);
+  --shadow-md: 0 8px 24px rgb(43 139 143 / 0.08);
+  --shadow-lg: 0 16px 40px rgb(43 139 143 / 0.12);
+  --shadow-gold: 0 8px 24px rgb(43 139 143 / 0.35);
 
   /* ---- Motion ---- */
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -181,15 +217,15 @@
 /* ---------- Signature decorative surfaces ---------- */
 
 .bg-arch-grid {
-  background-image: linear-gradient(rgb(198 161 91 / 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(198 161 91 / 0.07) 1px, transparent 1px);
+  background-image: linear-gradient(rgb(43 139 143 / 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(43 139 143 / 0.07) 1px, transparent 1px);
   background-size: 52px 52px;
 }
 
 .bg-gold-glow {
   background: radial-gradient(
     62% 48% at 82% 0%,
-    rgb(198 161 91 / 0.18),
+    rgb(43 139 143 / 0.18),
     transparent 72%
   );
 }
@@ -197,7 +233,7 @@
 .bg-ink-radial {
   background: radial-gradient(
     90% 70% at 50% 110%,
-    rgb(198 161 91 / 0.1),
+    rgb(43 139 143 / 0.1),
     transparent 70%
   );
 }
@@ -206,7 +242,7 @@
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgb(198 161 91 / 0.7),
+    rgb(43 139 143 / 0.7),
     transparent
   );
   height: 1px;
