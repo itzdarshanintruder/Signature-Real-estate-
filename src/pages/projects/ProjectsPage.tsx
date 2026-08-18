@@ -1,7 +1,6 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect, useRef } from 'react'
 import { SearchX } from 'lucide-react'
 import { Seo } from '@/components/ui/Seo'
-import { PageHeader } from '@/components/ui/PageHeader'
 import { Container } from '@/components/ui/Container'
 import { Section } from '@/components/ui/Section'
 import { Reveal } from '@/components/ui/Reveal'
@@ -32,7 +31,8 @@ const BUDGETS: { value: string; label: string; test: (price: number) => boolean 
   { value: 'gte-25', label: '₹25 Lakh+', test: (price) => price >= 25_00_000 },
 ]
 
-function sortProjects(projects: Project[], sort: ProjectSort): Project[] {  const sorted = [...projects]
+function sortProjects(projects: Project[], sort: ProjectSort): Project[] {
+  const sorted = [...projects]
   switch (sort) {
     case 'price-asc':
       return sorted.sort((a, b) => (a.startingPriceInr ?? Infinity) - (b.startingPriceInr ?? Infinity))
@@ -46,11 +46,106 @@ function sortProjects(projects: Project[], sort: ProjectSort): Project[] {  cons
   }
 }
 
+const DISTRICT_HEADERS: Record<
+  string,
+  { eyebrow: string; title: string; description: string }
+> = {
+  all: {
+    eyebrow: 'Our Developments',
+    title: 'Our Projects',
+    description:
+      'DTCP approved residential plots across Coimbatore, Namakkal, Madurai and Trichy — clear titles, wide roads and gated communities built for modern families.',
+  },
+  Coimbatore: {
+    eyebrow: 'Coimbatore',
+    title: 'Signature City',
+    description:
+      'Premium DTCP approved residential plots near Sulur, Coimbatore — 12 acres, 232 plots, black top roads, parks and 24×7 security.',
+  },
+  Namakkal: {
+    eyebrow: 'Namakkal',
+    title: 'Hitech City',
+    description:
+      'Modern DTCP approved gated community in Namakkal — wide roads, solar street lights, landscaped parks and 24×7 security.',
+  },
+  Madurai: {
+    eyebrow: 'Madurai',
+    title: 'Emerald City',
+    description:
+      'Lush DTCP approved residential plots in Madurai — tree-lined avenues, gated perimeter, parks and ready infrastructure.',
+  },
+  Trichy: {
+    eyebrow: 'Trichy',
+    title: 'Up Town & Eden Garden',
+    description:
+      'Two premium DTCP approved communities in Trichy — Up Town for urban living and Eden Garden for a garden-themed lifestyle.',
+  },
+}
+/** Injected once — the keyframe that drives the district-switch animation. */
+const FADE_UP_STYLE = `
+  @keyframes districtFadeUp {
+    from { opacity: 0; transform: translateY(32px); filter: blur(6px); }
+    to   { opacity: 1; transform: translateY(0);    filter: blur(0px); }
+  }
+  .district-fade-up {
+    animation: districtFadeUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .district-fade-up-delay-1 {
+    animation: districtFadeUp 0.5s 0.08s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .district-fade-up-delay-2 {
+    animation: districtFadeUp 0.5s 0.16s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+`
+
+interface DistrictHeaderProps {
+  eyebrow: string
+  title: string
+  description: string
+}
+
+/** Re-mounts on every key change → triggers fresh CSS animation. */
+function DistrictHeader({ eyebrow, title, description }: DistrictHeaderProps) {
+  return (
+    <header className="relative overflow-hidden bg-ink-900 pt-36 pb-16 text-cream-50 md:pt-44 md:pb-20">
+      <style>{FADE_UP_STYLE}</style>
+      <div aria-hidden className="bg-arch-grid absolute inset-0" />
+      <div aria-hidden className="bg-gold-glow absolute inset-0" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <p className="district-fade-up mb-4 flex items-center gap-3 text-xs font-semibold tracking-[0.28em] text-gold-400 uppercase">
+          <span aria-hidden className="h-px w-10 bg-gold-500/70" />
+          {eyebrow}
+        </p>
+        <h1 className="district-fade-up-delay-1 max-w-3xl text-balance text-4xl leading-tight text-cream-50 sm:text-5xl lg:text-6xl">
+          {title}
+        </h1>
+        <p className="district-fade-up-delay-2 mt-6 max-w-2xl text-base leading-relaxed text-cream-50/70 md:text-lg">
+          {description}
+        </p>
+      </div>
+    </header>
+  )
+}
+
+
 export default function ProjectsPage() {
   const { data: projects, isLoading, isError, refetch } = useProjects()
   const [filters, setFilters] = useState<ProjectFiltersValue>(DEFAULT_PROJECT_FILTERS)
   const [page, setPage] = useState(1)
   const debouncedSearch = useDebouncedValue(filters.search.trim().toLowerCase(), 250)
+  const [animKey, setAnimKey] = useState(0)
+  const [visible_header, setVisibleHeader] = useState(
+    DISTRICT_HEADERS[DEFAULT_PROJECT_FILTERS.district] ?? DISTRICT_HEADERS.all,
+  )
+  const prevDistrict = useRef(DEFAULT_PROJECT_FILTERS.district)
+
+  useEffect(() => {
+    if (prevDistrict.current === filters.district) return
+    prevDistrict.current = filters.district
+    // Bump the key to re-trigger the CSS animation
+    setAnimKey((k) => k + 1)
+    setVisibleHeader(DISTRICT_HEADERS[filters.district] ?? DISTRICT_HEADERS.all)
+  }, [filters.district])
 
   const budgetOptions = useMemo(
     () => [{ value: 'all', label: 'All Budgets' }, ...BUDGETS.map(({ value, label }) => ({ value, label }))],
@@ -58,9 +153,11 @@ export default function ProjectsPage() {
   )
 
   const districts = useMemo(
-    () => ['Salem', 'Coimbatore', 'Tiruchirappalli (Trichy)', 'Namakkal', 'Dindigul'],
+    () => ['Coimbatore', 'Namakkal', 'Madurai', 'Trichy'],
     [],
   )
+
+  const header = visible_header
 
   const filtered = useMemo(() => {
     if (!projects) return []
@@ -88,13 +185,15 @@ export default function ProjectsPage() {
   return (
     <>
       <Seo
-        title="Projects"
-        description="Explore Signature City's premium residential plot projects — available, premium and launching phases with clear titles."
+        title={filters.district === 'all' ? 'Projects' : `Projects in ${filters.district}`}
+        description="Explore our DTCP approved residential plot projects across Coimbatore, Namakkal, Madurai and Trichy — clear titles, ready infrastructure and premium communities."
       />
-      <PageHeader
-        eyebrow="Our Developments"
-        title="Signature Projects"
-        description="Every phase of Signature City is a complete, secure community — DTCP approved, clear title, and planned for modern living."
+
+      <DistrictHeader
+        key={animKey}
+        eyebrow={header.eyebrow}
+        title={header.title}
+        description={header.description}
       />
 
       <Section tone="cream" className="pt-10 md:pt-14">
