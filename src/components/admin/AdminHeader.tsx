@@ -18,8 +18,9 @@ export function AdminHeader() {
 
   return (
     <header className="border-b border-gold-500/20 bg-ink-900">
-      <Container className="flex h-16 flex-wrap items-center gap-x-6 gap-y-2">
-        <Link to="/admin" className="flex items-center gap-2.5">
+      {/* Row 1: logo + actions */}
+      <Container className="flex h-14 items-center justify-between gap-4">
+        <Link to="/admin" className="flex items-center gap-2.5 shrink-0">
           <img
             src="/logo.jpg"
             alt="VIP Housing and Properties Logo"
@@ -30,35 +31,16 @@ export function AdminHeader() {
           </p>
         </Link>
 
-        <nav aria-label="Admin sections" className="flex items-center gap-1">
-          {adminNav.map(({ label, to, icon: Icon }) => (
-            <NavLink
-              key={to}
-              to={to}
-              end={to === '/admin'}
-              className={({ isActive }) =>
-                cn(
-                  'inline-flex items-center gap-2 rounded-sm px-3 py-2 text-sm font-semibold transition-colors',
-                  isActive ? 'text-gold-400' : 'text-cream-50/70 hover:text-cream-50',
-                )
-              }
-            >
-              <Icon className="h-4 w-4" aria-hidden />
-              {label}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="ml-auto flex items-center gap-4">
+        <div className="flex items-center gap-3">
           {user?.email ? (
             <span className="hidden text-sm text-cream-50/60 sm:inline">{user.email}</span>
           ) : null}
           <Link
             to="/"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-cream-50/70 transition-colors hover:text-cream-50"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-cream-50/70 transition-colors hover:text-cream-50"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden />
-            Back to site
+            <span className="hidden sm:inline">Back to site</span>
           </Link>
           <button
             type="button"
@@ -66,13 +48,39 @@ export function AdminHeader() {
               logout()
               navigate('/admin/login', { replace: true })
             }}
-            className="inline-flex cursor-pointer items-center gap-2 text-sm font-semibold text-cream-50/70 transition-colors hover:text-gold-400"
+            className="inline-flex cursor-pointer items-center gap-1.5 text-sm font-semibold text-cream-50/70 transition-colors hover:text-gold-400"
           >
             <LogOut className="h-4 w-4" aria-hidden />
-            Sign out
+            <span className="hidden sm:inline">Sign out</span>
           </button>
         </div>
       </Container>
+
+      {/* Row 2: section nav tabs */}
+      <div className="border-t border-gold-500/10">
+        <Container>
+          <nav aria-label="Admin sections" className="flex items-center gap-1 overflow-x-auto">
+            {adminNav.map(({ label, to, icon: Icon }) => (
+              <NavLink
+                key={to}
+                to={to}
+                end={to === '/admin'}
+                className={({ isActive }) =>
+                  cn(
+                    'inline-flex items-center gap-2 whitespace-nowrap px-3 py-3 text-sm font-semibold transition-colors border-b-2',
+                    isActive
+                      ? 'border-gold-400 text-gold-400'
+                      : 'border-transparent text-cream-50/70 hover:text-cream-50',
+                  )
+                }
+              >
+                <Icon className="h-4 w-4" aria-hidden />
+                {label}
+              </NavLink>
+            ))}
+          </nav>
+        </Container>
+      </div>
     </header>
   )
 }

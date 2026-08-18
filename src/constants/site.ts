@@ -20,8 +20,6 @@ export const SITE = {
 export const NAV_ITEMS = [
   { label: 'Home', to: '/' },
   { label: 'Projects', to: '/projects' },
-  { label: 'Gallery', to: '/gallery' },
-  { label: 'Amenities', to: '/amenities' },
   { label: 'About', to: '/about' },
   { label: 'FAQ', to: '/faq' },
   { label: 'Contact', to: '/contact' },

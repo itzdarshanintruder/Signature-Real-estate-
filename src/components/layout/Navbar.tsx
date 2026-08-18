@@ -88,7 +88,7 @@ export function Navbar() {
             'transition-all duration-300',
             scrolled
               ? 'border-b border-gold-500/20 bg-ink-900/90 backdrop-blur-md'
-              : 'bg-transparent',
+              : 'bg-gradient-to-b from-ink-950/80 to-transparent',
           )}
         >
           <Container className="flex h-16 items-center justify-between md:h-20">
