@@ -28,10 +28,10 @@ export function Image({ src, alt, aspect = 'aspect-[4/3]', className, eager = fa
         className="absolute inset-0 flex items-center justify-center"
       >
         <svg viewBox="0 0 64 64" className="h-16 w-16 opacity-25 md:h-20 md:w-20" fill="none">
-          <path d={MONOGRAM_LINES} stroke="#2b8b8f" strokeWidth="1.5" />
+          <path d={MONOGRAM_LINES} stroke="#d4a843" strokeWidth="1.5" />
           <path
             d="M32 20 L40 28 L32 44 L24 28 Z"
-            stroke="#2b8b8f"
+            stroke="#d4a843"
             strokeWidth="1"
             opacity="0.7"
           />

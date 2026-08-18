@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* ---- Teal Primary (VIP Housing primary) ---- */
-  --color-gold-50: #f0f9fb;
-  --color-gold-100: #d9f0f4;
-  --color-gold-200: #b8e1e9;
-  --color-gold-300: #87ccd9;
-  --color-gold-400: #5eb8ca;
-  --color-gold-500: #2b8b8f;
-  --color-gold-600: #247278;
-  --color-gold-700: #1d5a61;
-  --color-gold-800: #164350;
-  --color-gold-900: #0f2b2e;
+  /* ---- Light Gold Primary ---- */
+  --color-gold-50: #fdfaf3;
+  --color-gold-100: #fbf3e0;
+  --color-gold-200: #f5e4bd;
+  --color-gold-300: #edd191;
+  --color-gold-400: #e2be62;
+  --color-gold-500: #d4a843;
+  --color-gold-600: #b88a28;
+  --color-gold-700: #916818;
+  --color-gold-800: #6b4c10;
+  --color-gold-900: #422e06;
 
   /* ---- Warm Ink (near-black neutral) ---- */
   --color-ink-50: #f6f6f5;
@@ -75,9 +75,9 @@
 
   /* ---- Shadows ---- */
   --shadow-sm: 0 1px 2px rgb(11 11 10 / 0.05);
-  --shadow-md: 0 8px 24px rgb(43 139 143 / 0.08);
-  --shadow-lg: 0 16px 40px rgb(43 139 143 / 0.12);
-  --shadow-gold: 0 8px 24px rgb(43 139 143 / 0.35);
+  --shadow-md: 0 8px 24px rgb(212 168 67 / 0.12);
+  --shadow-lg: 0 16px 40px rgb(212 168 67 / 0.18);
+  --shadow-gold: 0 8px 24px rgb(212 168 67 / 0.35);
 
   /* ---- Motion ---- */
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -217,15 +217,15 @@
 /* ---------- Signature decorative surfaces ---------- */
 
 .bg-arch-grid {
-  background-image: linear-gradient(rgb(43 139 143 / 0.07) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(43 139 143 / 0.07) 1px, transparent 1px);
+  background-image: linear-gradient(rgb(212 168 67 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(212 168 67 / 0.08) 1px, transparent 1px);
   background-size: 52px 52px;
 }
 
 .bg-gold-glow {
   background: radial-gradient(
     62% 48% at 82% 0%,
-    rgb(43 139 143 / 0.18),
+    rgb(212 168 67 / 0.22),
     transparent 72%
   );
 }
@@ -233,7 +233,7 @@
 .bg-ink-radial {
   background: radial-gradient(
     90% 70% at 50% 110%,
-    rgb(43 139 143 / 0.1),
+    rgb(212 168 67 / 0.12),
     transparent 70%
   );
 }
@@ -242,7 +242,7 @@
   background-image: linear-gradient(
     90deg,
     transparent,
-    rgb(43 139 143 / 0.7),
+    rgb(212 168 67 / 0.7),
     transparent
   );
   height: 1px;
