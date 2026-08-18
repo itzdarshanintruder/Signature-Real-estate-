@@ -19,7 +19,6 @@ import {
   Eye,
   EyeOff,
   Upload,
-  Image as ImageIcon,
   FileText,
 } from 'lucide-react'
 import { AdminHeader } from '@/components/admin/AdminHeader'

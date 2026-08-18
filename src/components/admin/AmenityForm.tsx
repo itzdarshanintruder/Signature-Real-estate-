@@ -10,13 +10,6 @@ import type { AdminAmenity, AmenityInput } from '@/types/admin'
 
 const AMENITY_CATEGORIES = ['Lifestyle', 'Security', 'Community', 'Infrastructure'] as const
 
-const coerceOptionalNumber = (value: unknown): unknown => {
-  const trimmed = typeof value === 'string' ? value.trim() : value
-  if (trimmed === '' || trimmed == null) return undefined
-  const asNumber = Number(trimmed)
-  return Number.isNaN(asNumber) ? NaN : asNumber
-}
-
 const coerceRequiredNumber = (value: unknown): unknown => {
   const trimmed = typeof value === 'string' ? value.trim() : value
   if (trimmed === '' || trimmed == null) return NaN

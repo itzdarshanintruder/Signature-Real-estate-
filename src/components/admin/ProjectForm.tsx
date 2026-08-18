@@ -91,7 +91,7 @@ function toFormValues(project?: AdminProject | null): DeepPartial<ProjectFormVal
     title: project?.title ?? '',
     slug: project?.slug ?? '',
     status: project?.status ?? 'available',
-    district: project?.district ?? '',
+    district: (project?.district as (typeof AVAILABLE_DISTRICTS)[number]) ?? undefined,
     location: project?.location ?? '',
     acreage: project?.acreage ?? '',
     tagline: project?.tagline ?? '',

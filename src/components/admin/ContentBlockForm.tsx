@@ -109,7 +109,7 @@ export function ContentBlockForm({ row, submitting, onSubmit, onCancel }: Conten
               The public site reads this block after every save.
             </Badge>
           </div>
-          <FieldError message={parseError} />
+          <FieldError message={parseError ?? undefined} />
         </div>
 
         <div>

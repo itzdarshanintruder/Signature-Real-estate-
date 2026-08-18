@@ -1,13 +1,14 @@
 import type { ReactNode } from 'react'
 import { cn } from '@/utils/cn'
 
-type Tone = 'gold' | 'green' | 'muted' | 'dark'
+export type Tone = 'gold' | 'green' | 'muted' | 'dark' | 'red'
 
 const tones: Record<Tone, string> = {
   gold: 'border-gold-500/40 bg-gold-50 text-gold-800',
   green: 'border-emerald-700/30 bg-emerald-50 text-emerald-800',
   muted: 'border-ink-200 bg-cream-50 text-ink-600',
   dark: 'border-cream-50/20 bg-cream-50/10 text-cream-50',
+  red: 'border-red-500/30 bg-red-50 text-red-800',
 }
 
 interface BadgeProps {
