@@ -1,0 +1,20 @@
+[
+  { "id": "40000000-0000-4000-8000-000000000001", "project_id": "10000000-0000-4000-8000-000000000001", "size": "20×30", "dimensions": "600 sq. ft.", "start_price_inr": 960000, "note": null, "display_order": 0, "is_active": true },
+  { "id": "40000000-0000-4000-8000-000000000002", "project_id": "10000000-0000-4000-8000-000000000001", "size": "24×40", "dimensions": "960 sq. ft.", "start_price_inr": 1536000, "note": null, "display_order": 1, "is_active": true },
+  { "id": "40000000-0000-4000-8000-000000000003", "project_id": "10000000-0000-4000-8000-000000000001", "size": "30×40", "dimensions": "1200 sq. ft.", "start_price_inr": 1920000, "note": "Most popular", "display_order": 2, "is_active": true },
+  { "id": "40000000-0000-4000-8000-000000000004", "project_id": "10000000-0000-4000-8000-000000000001", "size": "30×50", "dimensions": "1500 sq. ft.", "start_price_inr": 2400000, "note": null, "display_order": 3, "is_active": true },
+
+  { "id": "40000000-0000-4000-8000-000000000005", "project_id": "10000000-0000-4000-8000-000000000002", "size": "30×40", "dimensions": "1200 sq. ft.", "start_price_inr": 2100000, "note": null, "display_order": 0, "is_active": true },
+  { "id": "40000000-0000-4000-8000-000000000006", "project_id": "10000000-0000-4000-8000-000000000002", "size": "30×50", "dimensions": "1500 sq. ft.", "start_price_inr": 2700000, "note": "Corner + garden", "display_order": 1, "is_active": true },
+
+  { "id": "40000000-0000-4000-8000-000000000007", "project_id": "10000000-0000-4000-8000-000000000003", "size": "20×30", "dimensions": "600 sq. ft.", "start_price_inr": 960000, "note": "Launch price", "display_order": 0, "is_active": true },
+  { "id": "40000000-0000-4000-8000-000000000008", "project_id": "10000000-0000-4000-8000-000000000003", "size": "24×40", "dimensions": "960 sq. ft.", "start_price_inr": 1536000, "note": "Launch price", "display_order": 1, "is_active": true },
+
+  { "id": "40000000-0000-4000-8000-000000000009", "project_id": "10000000-0000-4000-8000-000000000004", "size": "24×40", "dimensions": "960 sq. ft.", "start_price_inr": 1600000, "note": null, "display_order": 0, "is_active": true },
+  { "id": "40000000-0000-4000-8000-000000000010", "project_id": "10000000-0000-4000-8000-000000000004", "size": "30×40", "dimensions": "1200 sq. ft.", "start_price_inr": 2050000, "note": "Green-facing +", "display_order": 1, "is_active": true },
+
+  { "id": "40000000-0000-4000-8000-000000000011", "project_id": "10000000-0000-4000-8000-000000000005", "size": "20×30", "dimensions": "600 sq. ft.", "start_price_inr": 1250000, "note": "Resale on request", "display_order": 0, "is_active": true },
+
+  { "id": "40000000-0000-4000-8000-000000000012", "project_id": "10000000-0000-4000-8000-000000000006", "size": "35×50", "dimensions": "1750 sq. ft.", "start_price_inr": 2800000, "note": null, "display_order": 0, "is_active": true },
+  { "id": "40000000-0000-4000-8000-000000000013", "project_id": "10000000-0000-4000-8000-000000000006", "size": "40×50", "dimensions": "2000 sq. ft.", "start_price_inr": 3200000, "note": "Corner +", "display_order": 1, "is_active": true }
+]

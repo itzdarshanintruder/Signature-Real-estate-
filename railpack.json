@@ -1,0 +1,13 @@
+{
+  "$schema": "https://schema.railpack.com",
+  "steps": {
+    "build": {
+      "commands": [
+        "echo 'Skipping frontend build for backend service'"
+      ]
+    }
+  },
+  "deploy": {
+    "startCommand": "node server/server.mjs"
+  }
+}

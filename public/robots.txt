@@ -1,0 +1,7 @@
+# Signature City — robots.txt
+# NOTE: replace the sitemap domain with the production domain before launch.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.signaturecity.in/sitemap.xml

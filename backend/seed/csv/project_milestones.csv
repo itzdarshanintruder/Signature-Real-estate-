@@ -1,0 +1,20 @@
+id,project_id,phase,title,description,display_order,is_active
+50000000-0000-4000-8000-000000000001,10000000-0000-4000-8000-000000000001,Completed,Layout approval,DTCP approval secured and layout registered.,0,true
+50000000-0000-4000-8000-000000000002,10000000-0000-4000-8000-000000000001,Completed,Internal roads,Black top avenue formation complete.,1,true
+50000000-0000-4000-8000-000000000003,10000000-0000-4000-8000-000000000001,In progress,Parks & arch,Landscaping and grand arch underway.,2,true
+50000000-0000-4000-8000-000000000004,10000000-0000-4000-8000-000000000001,Upcoming,Handover,Final amenities ready for resident families.,3,true
+50000000-0000-4000-8000-000000000005,10000000-0000-4000-8000-000000000002,Completed,Approvals,Block approval and plot layout finalised.,0,true
+50000000-0000-4000-8000-000000000006,10000000-0000-4000-8000-000000000002,In progress,Landscaping,Green belts and garden frontages underway.,1,true
+50000000-0000-4000-8000-000000000007,10000000-0000-4000-8000-000000000002,Upcoming,Parks access,Residents gain privileged park access.,2,true
+50000000-0000-4000-8000-000000000008,10000000-0000-4000-8000-000000000003,Completed,Approval,DTCP approval secured for the layout.,0,true
+50000000-0000-4000-8000-000000000009,10000000-0000-4000-8000-000000000003,In progress,Pre-sales,Early registrations open with launch pricing.,1,true
+50000000-0000-4000-8000-000000000010,10000000-0000-4000-8000-000000000003,Upcoming,Roads & services,Avenue formation and utilities to begin.,2,true
+50000000-0000-4000-8000-000000000011,10000000-0000-4000-8000-000000000004,Completed,Layout approval,DTCP approval and registration complete.,0,true
+50000000-0000-4000-8000-000000000012,10000000-0000-4000-8000-000000000004,In progress,Central park,Landscaping the central green underway.,1,true
+50000000-0000-4000-8000-000000000013,10000000-0000-4000-8000-000000000004,Upcoming,Parks link,Connecting service road to the parks.,2,true
+50000000-0000-4000-8000-000000000014,10000000-0000-4000-8000-000000000005,Completed,Full sale,All plots sold within 14 months of launch.,0,true
+50000000-0000-4000-8000-000000000015,10000000-0000-4000-8000-000000000005,Completed,Construction,Residents building homes across the block.,1,true
+50000000-0000-4000-8000-000000000016,10000000-0000-4000-8000-000000000005,Ongoing,Community,Active residents' association and events.,2,true
+50000000-0000-4000-8000-000000000017,10000000-0000-4000-8000-000000000006,Completed,Approval,Exclusive block approved with service road.,0,true
+50000000-0000-4000-8000-000000000018,10000000-0000-4000-8000-000000000006,In progress,Service road,Dedicated service road complete.,1,true
+50000000-0000-4000-8000-000000000019,10000000-0000-4000-8000-000000000006,Upcoming,Estate parks,Reserved wing of the parks to open.,2,true

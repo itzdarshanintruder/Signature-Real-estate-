@@ -1,0 +1,26 @@
+[
+  { "id": "50000000-0000-4000-8000-000000000001", "project_id": "10000000-0000-4000-8000-000000000001", "phase": "Completed", "title": "Layout approval", "description": "DTCP approval secured and layout registered.", "display_order": 0, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000002", "project_id": "10000000-0000-4000-8000-000000000001", "phase": "Completed", "title": "Internal roads", "description": "Black top avenue formation complete.", "display_order": 1, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000003", "project_id": "10000000-0000-4000-8000-000000000001", "phase": "In progress", "title": "Parks & arch", "description": "Landscaping and grand arch underway.", "display_order": 2, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000004", "project_id": "10000000-0000-4000-8000-000000000001", "phase": "Upcoming", "title": "Handover", "description": "Final amenities ready for resident families.", "display_order": 3, "is_active": true },
+
+  { "id": "50000000-0000-4000-8000-000000000005", "project_id": "10000000-0000-4000-8000-000000000002", "phase": "Completed", "title": "Approvals", "description": "Block approval and plot layout finalised.", "display_order": 0, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000006", "project_id": "10000000-0000-4000-8000-000000000002", "phase": "In progress", "title": "Landscaping", "description": "Green belts and garden frontages underway.", "display_order": 1, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000007", "project_id": "10000000-0000-4000-8000-000000000002", "phase": "Upcoming", "title": "Parks access", "description": "Residents gain privileged park access.", "display_order": 2, "is_active": true },
+
+  { "id": "50000000-0000-4000-8000-000000000008", "project_id": "10000000-0000-4000-8000-000000000003", "phase": "Completed", "title": "Approval", "description": "DTCP approval secured for the layout.", "display_order": 0, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000009", "project_id": "10000000-0000-4000-8000-000000000003", "phase": "In progress", "title": "Pre-sales", "description": "Early registrations open with launch pricing.", "display_order": 1, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000010", "project_id": "10000000-0000-4000-8000-000000000003", "phase": "Upcoming", "title": "Roads & services", "description": "Avenue formation and utilities to begin.", "display_order": 2, "is_active": true },
+
+  { "id": "50000000-0000-4000-8000-000000000011", "project_id": "10000000-0000-4000-8000-000000000004", "phase": "Completed", "title": "Layout approval", "description": "DTCP approval and registration complete.", "display_order": 0, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000012", "project_id": "10000000-0000-4000-8000-000000000004", "phase": "In progress", "title": "Central park", "description": "Landscaping the central green underway.", "display_order": 1, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000013", "project_id": "10000000-0000-4000-8000-000000000004", "phase": "Upcoming", "title": "Parks link", "description": "Connecting service road to the parks.", "display_order": 2, "is_active": true },
+
+  { "id": "50000000-0000-4000-8000-000000000014", "project_id": "10000000-0000-4000-8000-000000000005", "phase": "Completed", "title": "Full sale", "description": "All plots sold within 14 months of launch.", "display_order": 0, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000015", "project_id": "10000000-0000-4000-8000-000000000005", "phase": "Completed", "title": "Construction", "description": "Residents building homes across the block.", "display_order": 1, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000016", "project_id": "10000000-0000-4000-8000-000000000005", "phase": "Ongoing", "title": "Community", "description": "Active residents' association and events.", "display_order": 2, "is_active": true },
+
+  { "id": "50000000-0000-4000-8000-000000000017", "project_id": "10000000-0000-4000-8000-000000000006", "phase": "Completed", "title": "Approval", "description": "Exclusive block approved with service road.", "display_order": 0, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000018", "project_id": "10000000-0000-4000-8000-000000000006", "phase": "In progress", "title": "Service road", "description": "Dedicated service road complete.", "display_order": 1, "is_active": true },
+  { "id": "50000000-0000-4000-8000-000000000019", "project_id": "10000000-0000-4000-8000-000000000006", "phase": "Upcoming", "title": "Estate parks", "description": "Reserved wing of the parks to open.", "display_order": 2, "is_active": true }
+]

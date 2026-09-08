@@ -1,0 +1,264 @@
+@import "tailwindcss";
+
+@theme {
+  /* ---- Light Gold Primary ---- */
+  --color-gold-50: #fdfaf3;
+  --color-gold-100: #fbf3e0;
+  --color-gold-200: #f5e4bd;
+  --color-gold-300: #edd191;
+  --color-gold-400: #e2be62;
+  --color-gold-500: #d4a843;
+  --color-gold-600: #b88a28;
+  --color-gold-700: #916818;
+  --color-gold-800: #6b4c10;
+  --color-gold-900: #422e06;
+
+  /* ---- Warm Ink (near-black neutral) ---- */
+  --color-ink-50: #f6f6f5;
+  --color-ink-100: #e8e8e6;
+  --color-ink-200: #cfcfcb;
+  --color-ink-300: #a9a9a4;
+  --color-ink-400: #7d7d78;
+  --color-ink-500: #5c5c57;
+  --color-ink-600: #3f3f3b;
+  --color-ink-700: #2c2c29;
+  --color-ink-800: #1a1a18;
+  --color-ink-900: #0b0b0a;
+  --color-ink-950: #070707;
+
+  /* ---- Warm Cream (surface) ---- */
+  --color-cream-50: #fdfcfa;
+  --color-cream-100: #f8f5f0;
+  --color-cream-200: #f0ebe1;
+  --color-cream-300: #e4dccd;
+
+  /* ---- Orange Accent (VIP Housing secondary) ---- */
+  --color-orange-50: #fdf6f3;
+  --color-orange-100: #fde6dd;
+  --color-orange-200: #fbd1bd;
+  --color-orange-300: #f8ad8f;
+  --color-orange-400: #f48a64;
+  --color-orange-500: #c65d4b;
+  --color-orange-600: #b34d3f;
+  --color-orange-700: #963d33;
+  --color-orange-800: #6b2c24;
+  --color-orange-900: #451b17;
+
+  /* ---- Green Accent (VIP Housing tertiary) ---- */
+  --color-green-50: #f3f7f5;
+  --color-green-100: #e1eceb;
+  --color-green-200: #c8dcd8;
+  --color-green-300: #a0c9bc;
+  --color-green-400: #72b09f;
+  --color-green-500: #4a7c6e;
+  --color-green-600: #3d6659;
+  --color-green-700: #315045;
+  --color-green-800: #213a32;
+  --color-green-900: #152420;
+
+  /* ---- Yellow/Gold Accent (VIP Housing quaternary) ---- */
+  --color-yellow-50: #fffbf0;
+  --color-yellow-100: #fff1d6;
+  --color-yellow-200: #ffe5ac;
+  --color-yellow-300: #ffd47a;
+  --color-yellow-400: #ffc94d;
+  --color-yellow-500: #d4a63d;
+  --color-yellow-600: #b89032;
+  --color-yellow-700: #8d6b27;
+  --color-yellow-800: #5f481a;
+  --color-yellow-900: #3d2f11;
+
+  /* ---- Typography ---- */
+  --font-display: "Cinzel", Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 1px 2px rgb(11 11 10 / 0.05);
+  --shadow-md: 0 8px 24px rgb(212 168 67 / 0.12);
+  --shadow-lg: 0 16px 40px rgb(212 168 67 / 0.18);
+  --shadow-gold: 0 8px 24px rgb(212 168 67 / 0.35);
+
+  /* ---- Motion ---- */
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.8s ease-out both;
+
+  /* ---- Z-index scale ---- */
+  --z-header: 50;
+  --z-overlay: 70;
+  --z-drawer: 80;
+  --z-modal: 100;
+  --z-toast: 110;
+
+  /* ---- Motion: brand easing + duration tokens ---- */
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-slow: 700ms;
+}
+
+/*
+ * ── Design-system reference (Tailwind v4 default scales) ──────────────
+ * Spacing    : 0.25rem (4px) base — space-1 … space-96, incl. fractions.
+ * Radius     : --radius-xs .125rem · sm .25rem · md .375rem · lg .5rem
+ *              · xl .75rem · 2xl 1rem · 3xl 1.5rem · full 9999px
+ * Container  : mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8  (ui/Container)
+ * Breakpoints: sm 40rem(640) · md 48rem(768) · lg 64rem(1024) · xl 80rem(1280) ·
+ *              2xl 96rem(1536). Mobile-first; 320–575px share the base tier.
+ * Shadows    : --shadow-sm/md/lg + --shadow-gold (accent glow).
+ */
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ping-soft {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  75%,
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-cream-50 font-sans text-ink-800 antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  :root {
+    color-scheme: light;
+  }
+
+  /* ---- svh/dvh progressive enhancement -------------------------------
+   * Tailwind emits the modern `100svh` / `90svh` utilities for older
+   * browsers that lack support, so provide vh fallbacks in the base layer.
+   * (Tailwind's utilities layer wins wherever `svh` is actually supported.) */
+  .min-h-svh {
+    min-height: 100vh;
+  }
+  .max-h-\[90svh\] {
+    max-height: 90vh;
+  }
+  @supports (min-height: 100svh) {
+    .min-h-svh {
+      min-height: 100svh;
+    }
+  }
+  @supports (max-height: 90svh) {
+    .max-h-\[90svh\] {
+      max-height: 90svh;
+    }
+  }
+
+  ::selection {
+    @apply bg-gold-500/25 text-ink-900;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-gold-600);
+    outline-offset: 3px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink-900;
+  }
+
+  /* ---- Custom scrollbar (luxury, thin) ---- */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-ink-100);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gold-600);
+    border-radius: 9999px;
+    border: 2px solid var(--color-ink-100);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold-500);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-gold-600) var(--color-ink-100);
+  }
+}
+
+/* ---------- Signature decorative surfaces ---------- */
+
+.bg-arch-grid {
+  background-image: linear-gradient(rgb(212 168 67 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(212 168 67 / 0.08) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+.bg-gold-glow {
+  background: radial-gradient(
+    62% 48% at 82% 0%,
+    rgb(212 168 67 / 0.22),
+    transparent 72%
+  );
+}
+
+.bg-ink-radial {
+  background: radial-gradient(
+    90% 70% at 50% 110%,
+    rgb(212 168 67 / 0.12),
+    transparent 70%
+  );
+}
+
+.hairline-gold {
+  background-image: linear-gradient(
+    90deg,
+    transparent,
+    rgb(212 168 67 / 0.7),
+    transparent
+  );
+  height: 1px;
+}
+
+/* Scroll reveal is powered by framer-motion in `components/ui/Reveal.tsx`. */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,11 @@
+[
+  { "id": "90000000-0000-4000-8000-000000000001", "category": "Master Plan", "src": null, "alt": "Signature City overall master plan", "caption": null, "display_order": 0, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000002", "category": "Master Plan", "src": null, "alt": "Avenue layout and zoning detail", "caption": null, "display_order": 1, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000003", "category": "Lifestyle", "src": null, "alt": "Landscaped parks and walking trails", "caption": null, "display_order": 2, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000004", "category": "Lifestyle", "src": null, "alt": "The Signature City clubhouse at dusk", "caption": null, "display_order": 3, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000005", "category": "Lifestyle", "src": null, "alt": "Community hall interior", "caption": null, "display_order": 4, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000006", "category": "Progress", "src": null, "alt": "Internal road laying works", "caption": null, "display_order": 5, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000007", "category": "Progress", "src": null, "alt": "Landscaping and planting underway", "caption": null, "display_order": 6, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000008", "category": "Approvals", "src": null, "alt": "DTCP approval certificate", "caption": null, "display_order": 7, "is_active": true },
+  { "id": "90000000-0000-4000-8000-000000000009", "category": "Approvals", "src": null, "alt": "RERA registration details", "caption": null, "display_order": 8, "is_active": true }
+]

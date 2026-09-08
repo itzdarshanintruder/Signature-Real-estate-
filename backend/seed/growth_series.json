@@ -1,0 +1,11 @@
+[
+  { "id": "80000000-0000-4000-8000-000000000001", "project_id": null, "year": "2018", "value": 100, "display_order": 0, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000002", "project_id": null, "year": "2019", "value": 112, "display_order": 1, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000003", "project_id": null, "year": "2020", "value": 121, "display_order": 2, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000004", "project_id": null, "year": "2021", "value": 138, "display_order": 3, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000005", "project_id": null, "year": "2022", "value": 155, "display_order": 4, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000006", "project_id": null, "year": "2023", "value": 168, "display_order": 5, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000007", "project_id": null, "year": "2024", "value": 186, "display_order": 6, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000008", "project_id": null, "year": "2025", "value": 202, "display_order": 7, "is_active": true },
+  { "id": "80000000-0000-4000-8000-000000000009", "project_id": null, "year": "2026", "value": 218, "display_order": 8, "is_active": true }
+]

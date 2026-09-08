@@ -1,0 +1,11 @@
+[
+  { "id": "b0000000-0000-4000-8000-000000000001", "title": "Black Top Roads", "description": "Wide 24 / 30 / 33 ft paved avenues.", "icon": "route", "display_order": 0, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000002", "title": "Parks", "description": "Landscaped greens across the layout.", "icon": "trees", "display_order": 1, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000003", "title": "Gated Community", "description": "A secure, exclusive enclave.", "icon": "home", "display_order": 2, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000004", "title": "24×7 Security", "description": "Round-the-clock manned security.", "icon": "shield-check", "display_order": 3, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000005", "title": "Ground Water", "description": "Dedicated groundwater supply for every plot.", "icon": "droplets", "display_order": 4, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000006", "title": "Grand Arch", "description": "A landmark entrance to the community.", "icon": "building", "display_order": 5, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000007", "title": "Compound Wall", "description": "Complete gated perimeter protection.", "icon": "shield", "display_order": 6, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000008", "title": "Solar Street Lights", "description": "Solar-powered lighting on every avenue.", "icon": "lightbulb", "display_order": 7, "is_active": true },
+  { "id": "b0000000-0000-4000-8000-000000000009", "title": "Avenue Trees", "description": "Tree-lined streets for shade and calm.", "icon": "trees", "display_order": 8, "is_active": true }
+]

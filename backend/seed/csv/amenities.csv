@@ -1,0 +1,10 @@
+id,title,description,icon,display_order,is_active
+b0000000-0000-4000-8000-000000000001,Black Top Roads,Wide 24 / 30 / 33 ft paved avenues.,route,0,true
+b0000000-0000-4000-8000-000000000002,Parks,Landscaped greens across the layout.,trees,1,true
+b0000000-0000-4000-8000-000000000003,Gated Community,"A secure, exclusive enclave.",home,2,true
+b0000000-0000-4000-8000-000000000004,24×7 Security,Round-the-clock manned security.,shield-check,3,true
+b0000000-0000-4000-8000-000000000005,Ground Water,Dedicated groundwater supply for every plot.,droplets,4,true
+b0000000-0000-4000-8000-000000000006,Grand Arch,A landmark entrance to the community.,building,5,true
+b0000000-0000-4000-8000-000000000007,Compound Wall,Complete gated perimeter protection.,shield,6,true
+b0000000-0000-4000-8000-000000000008,Solar Street Lights,Solar-powered lighting on every avenue.,lightbulb,7,true
+b0000000-0000-4000-8000-000000000009,Avenue Trees,Tree-lined streets for shade and calm.,trees,8,true
