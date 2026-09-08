@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Menu, Phone, X } from 'lucide-react'
+import { Menu, Mail, Phone, X } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { buttonStyles } from '@/components/ui/button-styles'
 import { NAV_ITEMS, SITE } from '@/constants/site'
@@ -64,23 +64,30 @@ export function Navbar() {
     <>
       <header className="fixed inset-x-0 top-0 z-50">
         {/* Slim top strip */}
-        <div className="hidden border-b border-cream-50/10 bg-ink-950 text-cream-50/60 md:block">
-          <Container className="flex h-9 items-center justify-between text-xs">
-            <div className="flex items-center gap-6">
+        <div className="hidden border-b border-cream-50/10 bg-ink-950 text-cream-50/70 md:block">
+          <Container className="flex h-9 items-center justify-between">
+            <div className="flex items-center gap-7">
               <a
                 href={SITE.phoneHref}
-                className="flex items-center gap-2 transition-colors hover:text-gold-300"
+                className="flex items-center gap-2 text-sm font-medium transition-colors hover:text-gold-300"
               >
-                <Phone className="h-3.5 w-3.5 text-gold-400" aria-hidden />
+                <Phone className="h-3.5 w-3.5 shrink-0 text-gold-400" aria-hidden />
                 {SITE.phone}
               </a>
-              <span className="hidden lg:inline">{SITE.email}</span>
+              <a
+                href="mailto:dtcppplotsale@gmail.com"
+                className="hidden items-center gap-2 text-sm font-medium transition-colors hover:text-gold-300 lg:flex"
+              >
+                <Mail className="h-3.5 w-3.5 shrink-0 text-gold-400" aria-hidden />
+                dtcppplotsale@gmail.com
+              </a>
             </div>
-            <p className="tracking-[0.22em] text-gold-400/90 uppercase">
+            <p className="text-xs tracking-[0.22em] text-gold-400/90 uppercase">
               DTCP Approved · RERA Compliant
             </p>
           </Container>
         </div>
+
 
         {/* Main bar */}
         <div
