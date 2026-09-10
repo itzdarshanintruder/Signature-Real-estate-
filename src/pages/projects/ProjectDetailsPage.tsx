@@ -29,6 +29,7 @@ import { GrowthChart } from '@/components/ui/GrowthChart'
 import { buttonStyles } from '@/components/ui/button-styles'
 import { ProjectGallery } from '@/components/projects/ProjectGallery'
 import { PlotCard } from '@/components/projects/PlotCard'
+import { ProjectPlotExplorer } from '@/components/projects/ProjectPlotExplorer'
 import { CTABand } from '@/components/sections/CTABand'
 import { useAmenities, useProject, useSiteContent } from '@/hooks/use-content'
 import { formatCurrencyInr } from '@/utils/formatters'
@@ -633,6 +634,8 @@ export default function ProjectDetailsPage() {
           </Container>
         </Section>
       ) : null}
+
+      <ProjectPlotExplorer projectId={project.id} projectName={project.title} />
 
       <CTABand />
     </>

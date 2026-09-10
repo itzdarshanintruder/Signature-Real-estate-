@@ -165,22 +165,59 @@ export default function AdminProjectsPage() {
                         </td>
                         <td className="px-4 py-4">
                           <div className="flex items-center justify-end gap-2">
-                            <Button
-                              variant="secondary"
-                              size="sm"
-                              onClick={() => navigate(`/admin/projects/${project.id}/edit`)}
-                            >
-                              <Pencil className="h-3.5 w-3.5" aria-hidden />
-                              Edit
-                            </Button>
-                            <Button
-                              variant="ghost"
-                              size="sm"
-                              className="text-red-700 hover:border-red-700/40 hover:bg-red-50"
-                              onClick={() => setPendingDelete(project)}
-                            >
-                              Delete
-                            </Button>
+                            {project.slug === 'omega-estates' || project.slug === 'signature-city-sulur' || project.slug === 'hitech-city' || project.slug === 'emerald-city' || project.slug === 'up-town' ? (
+                              <>
+                                <Button
+                                  variant="secondary"
+                                  size="sm"
+                                  onClick={() => navigate(`/admin/projects/${project.id}/edit`)}
+                                >
+                                  <Pencil className="h-3.5 w-3.5" aria-hidden />
+                                  Edit
+                                </Button>
+                                <Button
+                                  size="sm"
+                                  className="bg-gold-500 font-semibold text-ink-900 hover:bg-gold-400"
+                                  onClick={() => navigate(project.slug === 'omega-estates' ? '/admin/omega' : `/admin/projects/${project.id}/plots`)}
+                                >
+                                  Plot Gallery
+                                </Button>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="text-red-700 hover:border-red-700/40 hover:bg-red-50"
+                                  onClick={() => setPendingDelete(project)}
+                                >
+                                  Delete
+                                </Button>
+                              </>
+                            ) : (
+                              <>
+                                <Button
+                                  variant="outline"
+                                  size="sm"
+                                  onClick={() => navigate(`/admin/projects/${project.id}/plots`)}
+                                >
+                                  Plot Gallery
+                                </Button>
+                                <Button
+                                  variant="secondary"
+                                  size="sm"
+                                  onClick={() => navigate(`/admin/projects/${project.id}/edit`)}
+                                >
+                                  <Pencil className="h-3.5 w-3.5" aria-hidden />
+                                  Edit
+                                </Button>
+                                <Button
+                                  variant="ghost"
+                                  size="sm"
+                                  className="text-red-700 hover:border-red-700/40 hover:bg-red-50"
+                                  onClick={() => setPendingDelete(project)}
+                                >
+                                  Delete
+                                </Button>
+                              </>
+                            )}
                           </div>
                         </td>
                       </tr>

@@ -48,8 +48,32 @@ export async function fetchProjects(): Promise<Project[]> {
           overview: p.overview ?? [p.description || p.short_description || p.title],
           features: p.features ?? [],
           amenities: p.amenities ?? [],
-          images: [],
-          gallery: [],
+          images: p.slug === 'omega-estates' 
+            ? [{ src: '/projects/omega-estates/entrance.jpg', alt: 'Omega Estates Entrance' }]
+            : p.slug === 'signature-city-sulur'
+            ? [{ src: '/projects/signature-city/entrance.jpg', alt: 'Signature City Entrance' }]
+            : p.slug === 'hitech-city'
+            ? [{ src: '/projects/hitech-city/entrance.jpg', alt: 'Hitech City Entrance' }]
+            : p.slug === 'emerald-city'
+            ? [{ src: '/projects/emerald-city/entrance.jpg', alt: 'Emerald City Entrance' }]
+            : p.slug === 'up-town'
+            ? [{ src: '/projects/up-town/entrance.jpg', alt: 'UP TOWN Entrance' }]
+            : [],
+          gallery: p.slug === 'emerald-city'
+            ? [
+                { src: '/projects/emerald-city/overview.jpg', alt: 'Emerald City Overview' },
+                { src: '/projects/emerald-city/route-map.jpg', alt: 'Emerald City Route Map' },
+                { src: '/projects/emerald-city/proximities.jpg', alt: 'Emerald City Proximities' },
+                { src: '/projects/emerald-city/master-plan.jpg', alt: 'Emerald City Master Plan' }
+              ]
+            : p.slug === 'up-town'
+            ? [
+                { src: '/projects/up-town/overview.jpg', alt: 'UP TOWN Overview' },
+                { src: '/projects/up-town/route-map.jpg', alt: 'UP TOWN Route Map' },
+                { src: '/projects/up-town/proximities.jpg', alt: 'UP TOWN Proximities' },
+                { src: '/projects/up-town/master-plan.jpg', alt: 'UP TOWN Master Plan' }
+              ]
+            : [],
           availablePlots: [],
           pricing: [],
           milestones: [],

@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3001
 const MONGO_URL = process.env.MONGO_URL || 'mongodb://127.0.0.1:27017'
 const DB_NAME = process.env.DB_NAME || 'realestate'
 
-const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173')
+const ALLOWED_ORIGINS = (process.env.ALLOWED_ORIGINS || 'http://localhost:5173,http://localhost:5174,http://localhost:5175')
   .split(',')
   .map((origin) => origin.trim())
   .filter(Boolean)
@@ -17,16 +17,21 @@ const client = new MongoClient(MONGO_URL, {
   serverSelectionTimeoutMS: 5000,
 })
 
-let db = null
-let leads = null
-let projects = null
+let db
+let projects
+let leads
+let omegaPlots
+let projectPlots
 
 try {
+  console.log('Connecting to MongoDB...')
   await client.connect()
   db = client.db(DB_NAME)
-  leads = db.collection('leads')
   projects = db.collection('projects')
-  console.log('MongoDB connected:', DB_NAME)
+  leads = db.collection('leads')
+  omegaPlots = db.collection('omega_plots')
+  projectPlots = db.collection('project_plots')
+  console.log(`MongoDB connected: ${DB_NAME}`)
 } catch (error) {
   console.error('MongoDB connection error:', error.message)
 }
@@ -465,10 +470,187 @@ const server = http.createServer(async (req, res) => {
       return
     }
 
+    // =================================================
+    // OMEGA ESTATES PLOTS
+    // =================================================
+
+    // GET /api/omega-plots
+    if (req.method === 'GET' && req.url === '/api/omega-plots') {
+      const result = await omegaPlots.find({}).sort({ plotNumber: 1 }).toArray()
+      sendJson(res, 200, { data: result.map(p => ({ ...p, id: p._id.toString() })) })
+      return
+    }
+
+    // GET /api/omega-plots/:id
+    const omegaPlotMatch = req.url.match(/^\/api\/omega-plots\/([^/]+)$/)
+    if (req.method === 'GET' && omegaPlotMatch) {
+      const rawId = decodeURIComponent(omegaPlotMatch[1])
+      try {
+        const plot = await omegaPlots.findOne({ _id: new ObjectId(rawId) })
+        if (!plot) return sendJson(res, 404, { message: 'Plot not found' })
+        sendJson(res, 200, { data: { ...plot, id: plot._id.toString() } })
+      } catch {
+        sendJson(res, 400, { message: 'Invalid ID' })
+      }
+      return
+    }
+
+    // POST /api/omega-plots
+    if (req.method === 'POST' && req.url === '/api/omega-plots') {
+      const data = await readBody(req)
+      const plot = {
+        plotNumber: String(data.plotNumber || '').trim(),
+        block: String(data.block || 'A').trim(),
+        width: Number(data.width || 0),
+        length: Number(data.length || 0),
+        areaSqFt: Number(data.areaSqFt || 0),
+        status: String(data.status || 'Available').trim(),
+        notes: String(data.notes || '').trim(),
+        images: Array.isArray(data.images) ? data.images : [],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }
+      const result = await omegaPlots.insertOne(plot)
+      sendJson(res, 201, { data: { ...plot, id: result.insertedId.toString() } })
+      return
+    }
+
+    // PUT /api/omega-plots/:id
+    if (req.method === 'PUT' && omegaPlotMatch) {
+      const rawId = decodeURIComponent(omegaPlotMatch[1])
+      const data = await readBody(req)
+      try {
+        const objectId = new ObjectId(rawId)
+        const updateData = {
+          plotNumber: String(data.plotNumber || '').trim(),
+          block: String(data.block || 'A').trim(),
+          width: Number(data.width || 0),
+          length: Number(data.length || 0),
+          areaSqFt: Number(data.areaSqFt || 0),
+          status: String(data.status || 'Available').trim(),
+          notes: String(data.notes || '').trim(),
+          images: Array.isArray(data.images) ? data.images : [],
+          updatedAt: new Date().toISOString(),
+        }
+        await omegaPlots.updateOne({ _id: objectId }, { $set: updateData })
+        const updated = await omegaPlots.findOne({ _id: objectId })
+        sendJson(res, 200, { data: { ...updated, id: updated._id.toString() } })
+      } catch {
+        sendJson(res, 400, { message: 'Invalid ID' })
+      }
+      return
+    }
+
+    // DELETE /api/omega-plots/:id
+    if (req.method === 'DELETE' && omegaPlotMatch) {
+      const rawId = decodeURIComponent(omegaPlotMatch[1])
+      try {
+        const result = await omegaPlots.deleteOne({ _id: new ObjectId(rawId) })
+        if (result.deletedCount === 0) return sendJson(res, 404, { message: 'Plot not found' })
+        sendJson(res, 200, { data: null })
+      } catch {
+        sendJson(res, 400, { message: 'Invalid ID' })
+      }
+      return
+    }
+
+    // =================================================
+    // GENERIC PROJECT PLOTS
+    // =================================================
+
+    // GET /api/project-plots?projectId={id}
+    const projectPlotsBaseMatch = req.url.match(/^\/api\/project-plots(?:\?.*)?$/)
+    if (req.method === 'GET' && projectPlotsBaseMatch) {
+      const urlObj = new URL(req.url, `http://${req.headers.host}`)
+      const projectId = urlObj.searchParams.get('projectId')
+      const query = projectId ? { projectId } : {}
+      const result = await projectPlots.find(query).sort({ plotNumber: 1 }).toArray()
+      sendJson(res, 200, { data: result.map(p => ({ ...p, id: p._id.toString() })) })
+      return
+    }
+
+    // GET /api/project-plots/:id
+    const projectPlotMatch = req.url.match(/^\/api\/project-plots\/([^/]+)$/)
+    if (req.method === 'GET' && projectPlotMatch) {
+      const rawId = decodeURIComponent(projectPlotMatch[1])
+      try {
+        const plot = await projectPlots.findOne({ _id: new ObjectId(rawId) })
+        if (!plot) return sendJson(res, 404, { message: 'Plot not found' })
+        sendJson(res, 200, { data: { ...plot, id: plot._id.toString() } })
+      } catch {
+        sendJson(res, 400, { message: 'Invalid ID' })
+      }
+      return
+    }
+
+    // POST /api/project-plots
+    if (req.method === 'POST' && projectPlotsBaseMatch) {
+      const data = await readBody(req)
+      const plot = {
+        projectId: String(data.projectId || '').trim(),
+        plotNumber: String(data.plotNumber || '').trim(),
+        block: String(data.block || 'A').trim(),
+        width: Number(data.width || 0),
+        length: Number(data.length || 0),
+        areaSqFt: Number(data.areaSqFt || 0),
+        facing: String(data.facing || '').trim(),
+        status: String(data.status || 'Available').trim(),
+        price: data.price ? Number(data.price) : null,
+        description: String(data.description || '').trim(),
+        images: Array.isArray(data.images) ? data.images : [],
+        createdAt: new Date().toISOString(),
+        updatedAt: new Date().toISOString(),
+      }
+      const result = await projectPlots.insertOne(plot)
+      sendJson(res, 201, { data: { ...plot, id: result.insertedId.toString() } })
+      return
+    }
+
+    // PUT /api/project-plots/:id
+    if (req.method === 'PUT' && projectPlotMatch) {
+      const rawId = decodeURIComponent(projectPlotMatch[1])
+      const data = await readBody(req)
+      try {
+        const objectId = new ObjectId(rawId)
+        const updateData = {
+          projectId: String(data.projectId || '').trim(),
+          plotNumber: String(data.plotNumber || '').trim(),
+          block: String(data.block || 'A').trim(),
+          width: Number(data.width || 0),
+          length: Number(data.length || 0),
+          areaSqFt: Number(data.areaSqFt || 0),
+          facing: String(data.facing || '').trim(),
+          status: String(data.status || 'Available').trim(),
+          price: data.price ? Number(data.price) : null,
+          description: String(data.description || '').trim(),
+          images: Array.isArray(data.images) ? data.images : [],
+          updatedAt: new Date().toISOString(),
+        }
+        await projectPlots.updateOne({ _id: objectId }, { $set: updateData })
+        const updated = await projectPlots.findOne({ _id: objectId })
+        sendJson(res, 200, { data: { ...updated, id: updated._id.toString() } })
+      } catch {
+        sendJson(res, 400, { message: 'Invalid ID' })
+      }
+      return
+    }
+
+    // DELETE /api/project-plots/:id
+    if (req.method === 'DELETE' && projectPlotMatch) {
+      const rawId = decodeURIComponent(projectPlotMatch[1])
+      try {
+        const result = await projectPlots.deleteOne({ _id: new ObjectId(rawId) })
+        if (result.deletedCount === 0) return sendJson(res, 404, { message: 'Plot not found' })
+        sendJson(res, 200, { data: null })
+      } catch {
+        sendJson(res, 400, { message: 'Invalid ID' })
+      }
+      return
+    }
+
     // ------------------------------------------------
     // NOT FOUND
     // ------------------------------------------------
-
     sendJson(res, 404, {
       message: 'Not found',
     })

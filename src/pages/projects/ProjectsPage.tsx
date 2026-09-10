@@ -35,15 +35,36 @@ function sortProjects(projects: Project[], sort: ProjectSort): Project[] {
   const sorted = [...projects]
   switch (sort) {
     case 'price-asc':
-      return sorted.sort((a, b) => (a.startingPriceInr ?? Infinity) - (b.startingPriceInr ?? Infinity))
+      sorted.sort((a, b) => (a.startingPriceInr ?? Infinity) - (b.startingPriceInr ?? Infinity))
+      break
     case 'price-desc':
-      return sorted.sort((a, b) => (b.startingPriceInr ?? -Infinity) - (a.startingPriceInr ?? -Infinity))
+      sorted.sort((a, b) => (b.startingPriceInr ?? -Infinity) - (a.startingPriceInr ?? -Infinity))
+      break
     case 'name':
-      return sorted.sort((a, b) => a.title.localeCompare(b.title))
+      sorted.sort((a, b) => a.title.localeCompare(b.title))
+      break
     case 'featured':
     default:
-      return sorted.sort((a, b) => Number(b.isFeatured) - Number(a.isFeatured))
+      sorted.sort((a, b) => Number(b.isFeatured) - Number(a.isFeatured))
+      break
   }
+
+  // Pin Omega Estates to the very top ALWAYS
+  sorted.sort((a, b) => {
+    if (a.slug === 'omega-estates') return -1
+    if (b.slug === 'omega-estates') return 1
+    return 0
+  })
+
+  // Force Emerald City to be the 3rd item (index 2)
+  const emeraldIndex = sorted.findIndex(p => p.slug === 'emerald-city')
+  if (emeraldIndex > -1) {
+    const [emeraldCity] = sorted.splice(emeraldIndex, 1)
+    const insertIndex = Math.min(2, sorted.length)
+    sorted.splice(insertIndex, 0, emeraldCity)
+  }
+
+  return sorted
 }
 
 const DISTRICT_HEADERS: Record<
@@ -153,7 +174,7 @@ export default function ProjectsPage() {
   )
 
   const districts = useMemo(
-    () => ['Coimbatore', 'Namakkal', 'Madurai', 'Trichy'],
+    () => ['Coimbatore', 'Namakkal', 'Madurai', 'Tiruchirappalli'],
     [],
   )
 
