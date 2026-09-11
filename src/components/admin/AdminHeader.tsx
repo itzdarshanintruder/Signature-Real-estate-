@@ -1,14 +1,14 @@
 import { Link, NavLink, useNavigate } from 'react-router-dom'
-import { ArrowLeft, Inbox, LogOut, Building2 } from 'lucide-react'
+import { ArrowLeft, Inbox, LayoutDashboard, LogOut, Building2 } from 'lucide-react'
 import { Container } from '@/components/ui/Container'
 import { useAuthStore } from '@/store/auth-store'
 import { cn } from '@/utils/cn'
 
 const adminNav = [
+  { label: 'Contacts', to: '/admin', icon: LayoutDashboard },
+  { label: 'Projects', to: '/admin/local-projects', icon: Building2 },
   { label: 'Leads', to: '/admin/leads', icon: Inbox },
-  { label: 'Projects', to: '/admin/projects', icon: Building2 },
 ]
-
 
 /** Slim dark admin bar — section nav, session email, sign out. */
 export function AdminHeader() {

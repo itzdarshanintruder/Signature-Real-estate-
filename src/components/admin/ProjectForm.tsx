@@ -45,8 +45,7 @@ const commasToList = (value: string): string[] =>
 export const AVAILABLE_DISTRICTS = [
   'Salem',
   'Coimbatore',
-  'Madurai',
-  'Tiruchirappalli',
+  'Tiruchirappalli (Trichy)',
   'Namakkal',
   'Dindigul',
 ] as const
