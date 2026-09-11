@@ -6,7 +6,7 @@ import { cn } from '@/utils/cn'
 
 const adminNav = [
   { label: 'Contacts', to: '/admin', icon: LayoutDashboard },
-  { label: 'Projects', to: '/admin/local-projects', icon: Building2 },
+  { label: 'Projects', to: '/admin/projects', icon: Building2 },
   { label: 'Leads', to: '/admin/leads', icon: Inbox },
 ]
 
