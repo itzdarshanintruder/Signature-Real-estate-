@@ -32,6 +32,7 @@ import { PageHeader } from '@/components/ui/PageHeader'
 import { CTABand } from '@/components/sections/CTABand'
 import { useLocalStore, type LocalProject } from '@/store/local-store'
 import { formatCurrencyInr } from '@/utils/formatters'
+import { apiFetch } from '@/services/api-client'
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -86,11 +87,8 @@ function InterestModal({ project, onClose }: InterestModalProps) {
 
   const onSubmit = async (values: InterestFormValues) => {
   try {
-    const response = await fetch('http://localhost:3001/api/leads', {
+    await apiFetch('/api/leads', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       body: JSON.stringify({
         name: values.name,
         email: values.email ?? '',
@@ -100,10 +98,6 @@ function InterestModal({ project, onClose }: InterestModalProps) {
         projectSlug: String(project.id),
       }),
     })
-
-    if (!response.ok) {
-      throw new Error('Failed to save enquiry')
-    }
 
     // Keep local store also updated
     addLead({
