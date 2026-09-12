@@ -261,11 +261,18 @@ export default function ProjectDetailsPage() {
       </Section>
 
       {/* Image gallery */}
-      <Section tone="cream">
-        <Container>
-          <ProjectGallery images={project.gallery} projectName={project.title} />
-        </Container>
-      </Section>
+      {project.gallery.length > 0 ? (
+        <Section tone="cream">
+          <Container>
+            <SectionHeading
+              eyebrow="Gallery"
+              title={`See ${project.title}`}
+              subtitle="Click any image to view full-size."
+            />
+            <ProjectGallery images={project.gallery} projectName={project.title} />
+          </Container>
+        </Section>
+      ) : null}
 
       {/* Overview + sticky summary */}
       <Section tone="white">

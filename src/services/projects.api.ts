@@ -30,11 +30,12 @@ export async function fetchProjects(): Promise<Project[]> {
     try {
       const response = await apiFetch<{ data: ProjectDto[] }>('/projects')
       const data = await unwrap(response)
-      return data
+      const mapped = data
         .filter((p) => p.is_active)
         .map((p) => ({
           id: p.id,
-          slug: p.slug,
+          // Normalise legacy DB slug so the public URL /projects/signature-city resolves.
+          slug: p.slug === 'signature-city-sulur' ? 'signature-city' : p.slug,
           title: p.title,
           location: p.location,
           district: p.district,
@@ -82,6 +83,17 @@ export async function fetchProjects(): Promise<Project[]> {
           faq: [],
           isFeatured: p.is_featured,
         }))
+
+      // For any API project whose gallery is empty, fall back to the matching
+      // static project gallery (which has fully-wired src paths).
+      return mapped.map((apiProject) => {
+        if (apiProject.gallery.length > 0) return apiProject
+        const staticMatch = staticProjects.find((s) => s.slug === apiProject.slug)
+        if (staticMatch && staticMatch.gallery.length > 0) {
+          return { ...apiProject, gallery: staticMatch.gallery }
+        }
+        return apiProject
+      })
     } catch (error) {
       console.error('Failed to fetch projects from backend API, falling back to local storage', error)
     }
